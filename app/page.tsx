@@ -3,7 +3,6 @@ import DomainsGrid from './components/DomainsGrid'
 import DomainRadar from './components/DomainRadar'
 import FooterStatement from './components/FooterStatement'
 import DeveloperGuide from './components/DeveloperGuide'
-import SloganTicker from './components/SloganTicker'
 
 export default function Home() {
   return (
@@ -31,12 +30,12 @@ export default function Home() {
       {/* 主要內容網格 */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-12">
         {/* 左側：主儀表 */}
-        <div className="space-y-8">
+        <div className="flex">
           <MainGauge />
         </div>
         
-        {/* 右側：雷達圖 */}
-        <div className="space-y-8">
+        {/* 右側：雷達圖 - 展開到最右邊界 */}
+        <div className="flex w-full">
           <DomainRadar />
         </div>
       </div>
@@ -44,11 +43,6 @@ export default function Home() {
       {/* 五元素卡片區域 */}
       <div className="mb-12">
         <DomainsGrid />
-      </div>
-
-      {/* 語氣標語跑馬燈 */}
-      <div className="mb-12">
-        <SloganTicker />
       </div>
 
       {/* 文明宣言 */}

@@ -100,68 +100,70 @@ export default function MainGauge() {
   };
 
   return (
-    <div className="bg-black/30 border border-neon-blue/20 rounded-2xl p-8 backdrop-blur-lg">
+    <div className="bg-black/30 border border-neon-blue/20 rounded-2xl p-8 backdrop-blur-lg h-full w-full flex flex-col">
       <h2 className="text-xl font-light text-neon-blue mb-8 tracking-wide uppercase text-center">
         ASI 文明成熟度
       </h2>
       
-      {/* ASI 指數顯示 */}
-      <div className="text-center mb-8">
-        <div className={`text-6xl font-thin ${getASIIndexColor(animatedIndex)} mb-2 transition-colors duration-1000`}>
-          {animatedIndex}
-          <span className="text-2xl text-text-muted ml-1">%</span>
-        </div>
-        <div className="text-text-secondary text-sm tracking-widest">
-          ASI READINESS INDEX
-        </div>
-      </div>
-
-      {/* 倒數天數 */}
-      <div className="text-center mb-8">
-        <div className="text-8xl font-thin text-neon-blue mb-4 leading-none">
-          {countdown.toLocaleString()}
-        </div>
-        <div className="text-text-secondary text-lg tracking-widest">
-          天
-        </div>
-        <div className="text-text-muted text-sm mt-2">
-          距離 ASI 降臨預計還有
-        </div>
-      </div>
-
-      {/* 安全偏移 */}
-      <div className="text-center mb-6">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-neon-blue/10 rounded-lg border border-neon-blue/30">
-          <span className="text-text-secondary text-sm">Safety Bias</span>
-          <span className="text-neon-blue font-medium">
-            +{data.safety_bias.toFixed(1)}
-          </span>
-        </div>
-        <div className="text-text-muted text-xs mt-1">
-          Components - HCMI
-        </div>
-      </div>
-
-      {/* 進度條 */}
-      <div className="space-y-4">
-        <div className="relative h-10 bg-black/50 rounded-xl border border-neon-blue/20 overflow-hidden">
-          <div 
-            className={`h-full bg-gradient-to-r ${getProgressColor(animatedIndex)} rounded-xl transition-all duration-2000 ease-out relative`}
-            style={{ width: `${animatedIndex}%` }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+      <div className="flex-1 flex flex-col justify-between">
+        {/* ASI 指數顯示 */}
+        <div className="text-center mb-8">
+          <div className={`text-6xl font-thin ${getASIIndexColor(animatedIndex)} mb-2 transition-colors duration-1000`}>
+            {animatedIndex}
+            <span className="text-2xl text-text-muted ml-1">%</span>
           </div>
-          <div className="absolute inset-0 flex items-center justify-between px-4 text-text-secondary text-sm">
-            <span>前 ASI 時代</span>
-            <span className="font-medium">{animatedIndex}%</span>
-            <span>ASI 降臨</span>
+          <div className="text-text-secondary text-sm tracking-widest">
+            ASI READINESS INDEX
           </div>
         </div>
-        
-        <div className="flex justify-between text-xs text-text-muted">
-          <span>0</span>
-          <span className="text-warning-yellow">警戒</span>
-          <span>100</span>
+
+        {/* 倒數天數 */}
+        <div className="text-center mb-8">
+          <div className="text-8xl font-thin text-neon-blue mb-4 leading-none">
+            {countdown.toLocaleString()}
+          </div>
+          <div className="text-text-secondary text-lg tracking-widest">
+            天
+          </div>
+          <div className="text-text-muted text-sm mt-2">
+            距離 ASI 降臨預計還有
+          </div>
+        </div>
+
+        {/* 安全偏移 */}
+        <div className="text-center mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-neon-blue/10 rounded-lg border border-neon-blue/30">
+            <span className="text-text-secondary text-sm">Safety Bias</span>
+            <span className="text-neon-blue font-medium">
+              +{data.safety_bias.toFixed(1)}
+            </span>
+          </div>
+          <div className="text-text-muted text-xs mt-1">
+            Components - HCMI
+          </div>
+        </div>
+
+        {/* 進度條 */}
+        <div className="space-y-4">
+          <div className="relative h-10 bg-black/50 rounded-xl border border-neon-blue/20 overflow-hidden">
+            <div 
+              className={`h-full bg-gradient-to-r ${getProgressColor(animatedIndex)} rounded-xl transition-all duration-2000 ease-out relative`}
+              style={{ width: `${animatedIndex}%` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+            </div>
+            <div className="absolute inset-0 flex items-center justify-between px-4 text-text-secondary text-sm">
+              <span>前 ASI 時代</span>
+              <span className="font-medium">{animatedIndex}%</span>
+              <span>ASI 降臨</span>
+            </div>
+          </div>
+          
+          <div className="flex justify-between text-xs text-text-muted">
+            <span>0</span>
+            <span className="text-warning-yellow">警戒</span>
+            <span>100</span>
+          </div>
         </div>
       </div>
     </div>

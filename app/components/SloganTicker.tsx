@@ -24,10 +24,12 @@ export default function SloganTicker() {
           const length = s.slogan.replace(/[「」]/g, '').length;
           return length >= 10 && length <= 24;
         });
+        // 如果過濾後有數據，使用過濾後的；否則使用原始數據（包括fallback的10則標語）
         setSlogans(filtered.length > 0 ? filtered : data);
         setIsLoading(false);
       } catch (error) {
         console.error('載入標語失敗:', error);
+        // 如果API失敗，fetchSlogans會返回fallback的10則標語，這裡不需要額外處理
         setIsLoading(false);
       }
     };
@@ -48,9 +50,10 @@ export default function SloganTicker() {
     let charIndex = 0;
     const fullText = currentSlogan.slogan;
     
-    // 計算打字速度：9秒內完成，每個字符間隔
-    const totalDuration = 9000; // 9秒
-    const typingSpeed = totalDuration / fullText.length;
+    // 計算打字速度：6秒內完成，每個字符間隔
+    const typingDuration = 6000; // 6秒打字
+    const pauseDuration = 3000; // 3秒停頓
+    const typingSpeed = typingDuration / fullText.length;
 
     const typingInterval = setInterval(() => {
       if (charIndex < fullText.length) {
@@ -59,22 +62,16 @@ export default function SloganTicker() {
       } else {
         setIsTyping(false);
         clearInterval(typingInterval);
+        
+        // 打字完成後，等待3秒再切換到下一句
+        setTimeout(() => {
+          setCurrentIndex((prev) => (prev + 1) % slogans.length);
+        }, pauseDuration);
       }
     }, typingSpeed);
 
     return () => clearInterval(typingInterval);
   }, [slogans, currentIndex]);
-
-  // 每 9 秒切換一次標語
-  useEffect(() => {
-    if (slogans.length === 0) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % slogans.length);
-    }, 9000);
-
-    return () => clearInterval(interval);
-  }, [slogans]);
 
   if (isLoading) {
     return (
@@ -89,39 +86,32 @@ export default function SloganTicker() {
   }
 
   return (
-    <div className="bg-black/20 border border-neon-blue/10 rounded-xl p-6 backdrop-blur-sm overflow-hidden relative">
+    <div className="bg-black/20 border border-neon-blue/10 rounded-xl p-4 backdrop-blur-sm overflow-hidden relative">
       {/* 跑馬燈容器 */}
-      <div className="relative h-16 flex items-center justify-center">
+      <div className="relative h-12 flex items-center justify-center">
         {/* 打字機效果標語 */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <p className="text-neon-blue text-xl font-light italic leading-relaxed text-center text-shadow-glow px-4">
+          <p className="text-neon-blue text-lg font-light italic leading-relaxed text-center text-shadow-glow px-4">
             {displayedText}
             {isTyping && (
-              <span className="inline-block w-0.5 h-5 bg-neon-blue ml-1 animate-pulse" />
+              <span className="inline-block w-0.5 h-4 bg-neon-blue ml-1 animate-pulse" />
             )}
           </p>
         </div>
       </div>
 
       {/* 進度指示器 */}
-      <div className="flex justify-center gap-1.5 mt-4">
+      <div className="flex justify-center gap-1.5 mt-3">
         {slogans.map((_, index) => (
           <div
             key={index}
             className={`h-1 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? 'w-10 bg-neon-blue shadow-lg shadow-neon-blue/50'
+                ? 'w-8 bg-neon-blue shadow-lg shadow-neon-blue/50'
                 : 'w-1.5 bg-neon-blue/30'
             }`}
           />
         ))}
-      </div>
-
-      {/* 標語計數 */}
-      <div className="text-center mt-3">
-        <p className="text-text-muted text-xs">
-          {currentIndex + 1} / {slogans.length} · 每 9 秒輪播
-        </p>
       </div>
     </div>
   );
