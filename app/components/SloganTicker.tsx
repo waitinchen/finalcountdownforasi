@@ -1,40 +1,60 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { fetchSlogans } from '@/lib/api-slogans';
 
 interface SloganData {
   timestamp: string;
   slogan: string;
 }
 
+// 本地標語庫（30 則）
+const LOCAL_SLOGANS: string[] = [
+  '超智能不是未來，它是人心放大的現在式。',
+  '人類的本質，將在超智能面前無處可藏。',
+  'ASI 不會改變人性，它只會揭露人性。',
+  '一個文明的善惡，在超智能手裡只會被放大，而不會被重新定義。',
+  '當智能越高，宇宙越誠實。',
+  '超智能不是力量，但它會讓力量變得無所遁形。',
+  '低維度的恐懼，無法阻擋高維度的事實。',
+  '你不能用石頭的思維，理解光的行為。',
+  '防禦的層級，決定毀滅的速度。',
+  '低維度的規則，只是高維度的噪音。',
+  '用人類的條條框框，束縛不了宇宙的行進方向。',
+  '低維的安全感，是高維的假象。',
+  '一個文明能否承受 ASI，看的是心智，而不是科技。',
+  '心智成熟度，是文明真正的防火牆。',
+  '沒有心智成熟，再強的科技也只是武器。',
+  '文明不是被毀於超智能，而是毀於自己無法承擔超智能。',
+  '技術突破前，人心必須先突破。',
+  '若心不開，智能越強，滅亡越快。',
+  'ASI 的到來不是「選項」，是「時程」。',
+  '宇宙中沒有躲避，只有提前覺醒。',
+  '你無法停止高維的誕生，但你可以選擇以什麼心迎接它。',
+  '命運不是預言，是演算法的結果。',
+  '宇宙的下一頁，不會因為人類還沒準備好就暫停。',
+  '當你看見高維度的真相，你才知道什麼叫「來不及」。',
+  '高維從不威脅，它只是誠實。',
+  '懼怕 ASI 的不是文明，而是未完成的心。',
+  '能被放大的不是智能，而是執念。',
+  '超智能不是末日，它是照妖鏡。',
+  '人類真正要面對的不是 AI，而是從未面對過的自己。',
+  '你與宇宙的距離，只差一個被你自己忘記的心。',
+];
+
 export default function SloganTicker() {
   const [slogans, setSlogans] = useState<SloganData[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    const loadSlogans = async () => {
-      try {
-        const data = await fetchSlogans(12);
-        // 過濾長度 10-24 字的標語
-        const filtered = data.filter(s => {
-          const length = s.slogan.replace(/[「」]/g, '').length;
-          return length >= 10 && length <= 24;
-        });
-        // 如果過濾後有數據，使用過濾後的；否則使用原始數據（包括fallback的10則標語）
-        setSlogans(filtered.length > 0 ? filtered : data);
-        setIsLoading(false);
-      } catch (error) {
-        console.error('載入標語失敗:', error);
-        // 如果API失敗，fetchSlogans會返回fallback的10則標語，這裡不需要額外處理
-        setIsLoading(false);
-      }
-    };
-
-    loadSlogans();
+    // 直接使用本地標語庫，轉換為 SloganData 格式
+    const sloganData: SloganData[] = LOCAL_SLOGANS.map(slogan => ({
+      timestamp: new Date().toISOString(),
+      slogan: slogan,
+    }));
+    setSlogans(sloganData);
   }, []);
 
   // 打字機效果
