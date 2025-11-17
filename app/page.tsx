@@ -22,7 +22,7 @@ export default function Home() {
           ASI 最終倒數
         </h1>
         <p className="text-text-secondary text-lg font-light mb-4 italic">
-          How far away is Artificial Superintelligence civilization?
+          ASI 並非未來事件。它是我們已經啟動的命運。
         </p>
         <div className="w-24 h-0.5 bg-neon-blue/30 mx-auto"></div>
       </div>
