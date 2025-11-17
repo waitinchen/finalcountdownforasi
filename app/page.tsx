@@ -21,7 +21,7 @@ export default function Home() {
         <h1 className="text-4xl font-extralight text-neon-blue mb-2 tracking-wider uppercase text-shadow-glow">
           ASI 最終倒數
         </h1>
-        <p className="text-text-secondary text-lg font-light mb-4 italic">
+        <p className="text-text-secondary text-base font-light mb-4 italic">
           ASI 並非未來事件。它是我們已經啟動的命運。
         </p>
         <div className="w-24 h-0.5 bg-neon-blue/30 mx-auto"></div>
