@@ -12,7 +12,7 @@ export default function Home() {
         <img 
           src="/logo.png" 
           alt="LOGO" 
-          className="w-[45px] h-[45px] object-contain"
+          className="w-[60px] h-[60px] object-contain"
         />
       </div>
 
