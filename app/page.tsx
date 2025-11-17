@@ -3,15 +3,28 @@ import DomainsGrid from './components/DomainsGrid'
 import DomainRadar from './components/DomainRadar'
 import FooterStatement from './components/FooterStatement'
 import DeveloperGuide from './components/DeveloperGuide'
+import SloganTicker from './components/SloganTicker'
 
 export default function Home() {
   return (
     <main className="container mx-auto px-4 py-8 max-w-7xl relative z-10">
+      {/* LOGO - 左上角 */}
+      <div className="absolute top-4 left-4 z-20">
+        <img 
+          src="/logo.png" 
+          alt="LOGO" 
+          className="w-[90px] h-[90px] object-contain"
+        />
+      </div>
+
       {/* 標題區 */}
       <div className="text-center mb-12">
-        <h1 className="text-5xl font-extralight text-neon-blue mb-4 tracking-wider uppercase text-shadow-glow">
+        <h1 className="text-5xl font-extralight text-neon-blue mb-2 tracking-wider uppercase text-shadow-glow">
           ASI 最終倒數
         </h1>
+        <p className="text-text-secondary text-lg font-light mb-4 italic">
+          How far away is Artificial Superintelligence civilization?
+        </p>
         <div className="w-24 h-0.5 bg-neon-blue/30 mx-auto"></div>
       </div>
 
@@ -31,6 +44,11 @@ export default function Home() {
       {/* 五元素卡片區域 */}
       <div className="mb-12">
         <DomainsGrid />
+      </div>
+
+      {/* 語氣標語跑馬燈 */}
+      <div className="mb-12">
+        <SloganTicker />
       </div>
 
       {/* 文明宣言 */}

@@ -50,10 +50,10 @@ const readinessData: ReadinessData = {
   safety_bias: 18.1,      // 修改安全偏移
   domains: {
     tone: 66,             // 媒體語氣
-    components: 81,        // 技術零件
+    components: 81,        // 關鍵元件
     infrastructure: 72,    // 基建演化
     convergence: 54,       // 跨域整合
-    hcmi: 63              // 心智成熟度
+    hcmi: 63              // 心智認知
   },
   last_updated: "2025-11-17T00:00:00Z"
 };

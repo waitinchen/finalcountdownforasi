@@ -16,17 +16,30 @@ export default function DomainRadar() {
         setData(readinessData);
       } catch (error) {
         console.error('DomainRadar: 獲取數據失敗:', error);
-        // 使用預設數據
+        // 使用預設數據（使用技術指引中的範例數據）
+        const tone = 10;
+        const components = 57;
+        const infrastructure = 57;
+        const convergence = 119;
+        const hcmi = 97;
+        
+        const avgTech = (tone + components + infrastructure + convergence) / 4;
+        const asiMaturity = (tone + components + infrastructure + convergence + hcmi) / 5;
+        const balanceIndex = (hcmi / avgTech) * 100;
+        const daysLeft = Math.round((100 - avgTech) * 1024);
+        
         const fallbackData = {
-          asi_index: 73.2,
-          countdown_days: 2424,
-          safety_bias: 18.1,
+          asi_index: 0,
+          countdown_days: daysLeft,
+          safety_bias: balanceIndex - 100,
+          balance_index: parseFloat(balanceIndex.toFixed(2)), // 保留小數後2位
+          five_element_maturity: Math.round(asiMaturity * 10) / 10,
           domains: {
-            tone: 66,
-            components: 81,
-            infrastructure: 72,
-            convergence: 54,
-            hcmi: 63
+            tone: tone,
+            components: components,
+            infrastructure: infrastructure,
+            convergence: convergence,
+            hcmi: hcmi
           },
           last_updated: new Date().toISOString()
         };
