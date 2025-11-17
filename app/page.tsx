@@ -18,7 +18,7 @@ export default function Home() {
 
       {/* 標題區 */}
       <div className="text-center mb-12">
-        <h1 className="text-5xl font-extralight text-neon-blue mb-2 tracking-wider uppercase text-shadow-glow">
+        <h1 className="text-4xl font-extralight text-neon-blue mb-2 tracking-wider uppercase text-shadow-glow">
           ASI 最終倒數
         </h1>
         <p className="text-text-secondary text-lg font-light mb-4 italic">
