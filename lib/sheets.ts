@@ -61,17 +61,20 @@ export function parseCSV(csvText: string): any[] {
     values.push(current.trim()); // 最後一個值
     
     return headers.reduce((obj, header, i) => {
-      let value: string | number = values[i]?.replace(/^"|"$/g, '') || '';
+      const rawValue = values[i]?.replace(/^"|"$/g, '') || '';
       
       // 嘗試轉換為數字
       if (header !== 'timestamp' && header !== 'slogan') {
-        const numValue = parseFloat(value as string);
+        const numValue = parseFloat(rawValue);
         if (!isNaN(numValue)) {
-          value = numValue;
+          obj[header] = numValue;
+        } else {
+          obj[header] = rawValue;
         }
+      } else {
+        obj[header] = rawValue;
       }
       
-      obj[header] = value;
       return obj;
     }, {} as any);
   });
