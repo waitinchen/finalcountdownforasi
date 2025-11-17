@@ -1,0 +1,43 @@
+import MainGauge from './components/MainGauge'
+import DomainsGrid from './components/DomainsGrid'
+import DomainRadar from './components/DomainRadar'
+import FooterStatement from './components/FooterStatement'
+import DeveloperGuide from './components/DeveloperGuide'
+
+export default function Home() {
+  return (
+    <main className="container mx-auto px-4 py-8 max-w-7xl relative z-10">
+      {/* 標題區 */}
+      <div className="text-center mb-12">
+        <h1 className="text-5xl font-extralight text-neon-blue mb-4 tracking-wider uppercase text-shadow-glow">
+          ASI 最終倒數
+        </h1>
+        <div className="w-24 h-0.5 bg-neon-blue/30 mx-auto"></div>
+      </div>
+
+      {/* 主要內容網格 */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-12">
+        {/* 左側：主儀表 */}
+        <div className="space-y-8">
+          <MainGauge />
+        </div>
+        
+        {/* 右側：雷達圖 */}
+        <div className="space-y-8">
+          <DomainRadar />
+        </div>
+      </div>
+
+      {/* 五元素卡片區域 */}
+      <div className="mb-12">
+        <DomainsGrid />
+      </div>
+
+      {/* 文明宣言 */}
+      <FooterStatement />
+
+      {/* 開發者指南（右下角固定） */}
+      <DeveloperGuide />
+    </main>
+  )
+}

@@ -1,0 +1,181 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { ReadinessData, DOMAIN_ENGLISH_LABELS } from '@/lib/types';
+import { fetchReadinessData } from '@/lib/api';
+
+export default function DomainRadar() {
+  const [data, setData] = useState<ReadinessData | null>(null);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        console.log('DomainRadar: 開始獲取數據...');
+        const readinessData = await fetchReadinessData();
+        console.log('DomainRadar: 數據獲取成功:', readinessData);
+        setData(readinessData);
+      } catch (error) {
+        console.error('DomainRadar: 獲取數據失敗:', error);
+        // 使用預設數據
+        const fallbackData = {
+          asi_index: 73.2,
+          countdown_days: 2424,
+          safety_bias: 18.1,
+          domains: {
+            tone: 66,
+            components: 81,
+            infrastructure: 72,
+            convergence: 54,
+            hcmi: 63
+          },
+          last_updated: new Date().toISOString()
+        };
+        setData(fallbackData);
+      }
+    };
+
+    loadData();
+  }, []);
+
+  if (!data) {
+    return (
+      <div className="bg-black/30 border border-neon-blue/20 rounded-2xl p-8 backdrop-blur-lg">
+        <div className="text-center text-neon-blue">
+          <div className="animate-pulse">載入中...</div>
+        </div>
+      </div>
+    );
+  }
+
+  const radarData = Object.entries(data.domains).map(([key, value]) => ({
+    domain: DOMAIN_ENGLISH_LABELS[key as keyof typeof DOMAIN_ENGLISH_LABELS],
+    value: value,
+  }));
+
+  const centerX = 200;
+  const centerY = 200;
+  const radius = 120;
+  const numPoints = radarData.length;
+  const angleStep = (Math.PI * 2) / numPoints;
+
+  // 創建雷達圖路徑
+  const radarPath = radarData.map((point, index) => {
+    const angle = angleStep * index - Math.PI / 2;
+    const value = point.value / 100;
+    const x = centerX + Math.cos(angle) * radius * value;
+    const y = centerY + Math.sin(angle) * radius * value;
+    return `${index === 0 ? 'M' : 'L'} ${x} ${y}`;
+  }).join(' ') + ' Z';
+
+  // 創建網格圓圈
+  const gridCircles = [0.2, 0.4, 0.6, 0.8, 1.0].map((scale) => {
+    const r = radius * scale;
+    return (
+      <circle
+        key={scale}
+        cx={centerX}
+        cy={centerY}
+        r={r}
+        fill="none"
+        stroke="rgba(100, 200, 255, 0.1)"
+        strokeWidth="1"
+      />
+    );
+  });
+
+  // 創建軸線
+  const axes = radarData.map((point, index) => {
+    const angle = angleStep * index - Math.PI / 2;
+    const x = centerX + Math.cos(angle) * radius;
+    const y = centerY + Math.sin(angle) * radius;
+    return (
+      <line
+        key={index}
+        x1={centerX}
+        y1={centerY}
+        x2={x}
+        y2={y}
+        stroke="rgba(100, 200, 255, 0.2)"
+        strokeWidth="1"
+      />
+    );
+  });
+
+  // 創建標籤位置
+  const labels = radarData.map((point, index) => {
+    const angle = angleStep * index - Math.PI / 2;
+    const labelRadius = radius + 30;
+    const x = centerX + Math.cos(angle) * labelRadius;
+    const y = centerY + Math.sin(angle) * labelRadius;
+    return (
+      <text
+        key={index}
+        x={x}
+        y={y}
+        textAnchor="middle"
+        fill="#8b9dc3"
+        fontSize="12"
+        fontWeight="300"
+      >
+        {point.domain}
+      </text>
+    );
+  });
+
+  // 創建數據點
+  const dataPoints = radarData.map((point, index) => {
+    const angle = angleStep * index - Math.PI / 2;
+    const value = point.value / 100;
+    const x = centerX + Math.cos(angle) * radius * value;
+    const y = centerY + Math.sin(angle) * radius * value;
+    return (
+      <circle
+        key={index}
+        cx={x}
+        cy={y}
+        r="4"
+        fill="#64c8ff"
+        stroke="rgba(100, 200, 255, 0.8)"
+        strokeWidth="2"
+      />
+    );
+  });
+
+  return (
+    <div className="bg-black/30 border border-neon-blue/20 rounded-2xl p-8 backdrop-blur-lg">
+      <h2 className="text-xl font-light text-neon-blue mb-8 tracking-wide uppercase text-center">
+        五維指標雷達圖
+      </h2>
+      
+      <div className="w-full h-96 flex items-center justify-center">
+        <svg width="400" height="400" viewBox="0 0 400 400">
+          {/* 網格圓圈 */}
+          {gridCircles}
+          
+          {/* 軸線 */}
+          {axes}
+          
+          {/* 雷達圖數據區域 */}
+          <path
+            d={radarPath}
+            fill="rgba(100, 200, 255, 0.2)"
+            stroke="#64c8ff"
+            strokeWidth="2"
+          />
+          
+          {/* 數據點 */}
+          {dataPoints}
+          
+          {/* 標籤 */}
+          {labels}
+        </svg>
+      </div>
+      
+      <div className="mt-4 text-center">
+        <p className="text-text-muted text-xs">
+          五個維度綜合評估文明成熟度進展
+        </p>
+      </div>
+    </div>
+  );
+}
