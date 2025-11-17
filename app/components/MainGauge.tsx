@@ -85,9 +85,10 @@ export default function MainGauge() {
 
   if (!data) {
     return (
-      <div className="bg-black/30 border border-neon-blue/20 rounded-2xl p-8 backdrop-blur-lg">
-        <div className="text-center text-neon-blue">
-          <div className="animate-pulse">載入中...</div>
+      <div className="bg-black/30 border border-neon-blue/20 rounded-2xl p-8 backdrop-blur-lg h-full w-full flex flex-col items-center justify-center min-h-[500px]">
+        <div className="text-center">
+          <div className="inline-block w-8 h-8 border-2 border-neon-blue border-t-transparent rounded-full animate-spin mb-4"></div>
+          <div className="text-neon-blue text-sm font-light">載入數據中...</div>
         </div>
       </div>
     );

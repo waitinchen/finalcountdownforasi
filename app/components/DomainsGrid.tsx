@@ -129,7 +129,16 @@ export default function DomainsGrid() {
     return 1 - Math.pow(1 - t, 3);
   };
 
-  if (!data) return <div>Loading...</div>;
+  if (!data) {
+    return (
+      <div className="bg-black/30 border border-neon-blue/20 rounded-2xl p-8 backdrop-blur-lg">
+        <div className="text-center py-12">
+          <div className="inline-block w-8 h-8 border-2 border-neon-blue border-t-transparent rounded-full animate-spin mb-4"></div>
+          <div className="text-neon-blue text-sm font-light">載入數據中...</div>
+        </div>
+      </div>
+    );
+  }
 
   const getScoreColor = (score: number) => {
     if (score >= 80) return 'text-green-400';

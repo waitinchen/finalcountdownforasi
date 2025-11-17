@@ -75,8 +75,11 @@ export default function SloganTicker() {
 
   if (isLoading) {
     return (
-      <div className="text-center py-4">
-        <div className="text-text-muted text-sm animate-pulse">載入標語中...</div>
+      <div className="bg-black/20 border border-neon-blue/10 rounded-xl p-4 backdrop-blur-sm">
+        <div className="text-center py-2">
+          <div className="inline-block w-4 h-4 border-2 border-neon-blue border-t-transparent rounded-full animate-spin mb-2"></div>
+          <div className="text-text-muted text-xs">載入標語中...</div>
+        </div>
       </div>
     );
   }
