@@ -68,9 +68,12 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
   const civYears = useV25 ? (v25Data?.civilization.years || 0) : 0;
   const civLevel = useV25 ? (v25Data?.civilization.level || 0) : (v2Data?.CRL || 0) / 100;
   
+  // RiskDelta = techDays - civDays
+  // 如果 techDays < civDays（技術更快）→ 危險（技術超前文明）
+  // 如果 techDays > civDays（文明更快）→ 安全（文明超前技術）
   const riskDelta = useV25 ? (techDays - civDays) : (v2Data?.RiskDelta || 0);
   const riskLevel = useV25 
-    ? (riskDelta < 0 ? 'Safe' : (Math.abs(riskDelta) < 500 ? 'Tense' : 'Crash'))
+    ? (riskDelta > 0 ? 'Safe' : (Math.abs(riskDelta) < 500 ? 'Tense' : 'Crash'))
     : (v2Data?.RiskLevel || 'Safe');
 
   return (

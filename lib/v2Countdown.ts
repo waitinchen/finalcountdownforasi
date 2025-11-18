@@ -62,6 +62,10 @@ export function calculateCRC(crl: number): number {
 /**
  * 計算 Risk Delta 和 Risk Level
  * RiskDelta = TCC - CRC
+ * 
+ * 邏輯說明：
+ * - 如果 TCC < CRC（技術倒數 < 文明倒數）→ 技術更快到達 → 危險（Crash）
+ * - 如果 TCC > CRC（技術倒數 > 文明倒數）→ 文明更快準備好 → 安全（Safe）
  */
 export function calculateRiskDelta(tcc: number, crc: number): {
   riskDelta: number;
@@ -70,14 +74,14 @@ export function calculateRiskDelta(tcc: number, crc: number): {
   const riskDelta = tcc - crc;
   
   let riskLevel: 'Safe' | 'Tense' | 'Crash';
-  if (riskDelta < 0) {
-    // 文明超前技術
+  if (riskDelta > 0) {
+    // 技術倒數 > 文明倒數 → 文明超前技術 → 安全
     riskLevel = 'Safe';
   } else if (Math.abs(riskDelta) < 500) {
-    // 接近交會期
+    // 接近交會期（差距 < 500 天）
     riskLevel = 'Tense';
   } else {
-    // 技術超前文明太多
+    // 技術倒數 < 文明倒數 → 技術超前文明太多 → 危險
     riskLevel = 'Crash';
   }
   
