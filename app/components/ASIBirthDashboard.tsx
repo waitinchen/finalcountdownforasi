@@ -74,6 +74,22 @@ export default function ASIBirthDashboard() {
         <ASIIndexModules indexes={data.indexes} />
       </div>
 
+      {/* Spotify 播客節目 */}
+      <div className="w-full">
+        <iframe
+          data-testid="embed-iframe"
+          style={{ borderRadius: '12px' }}
+          src="https://open.spotify.com/embed/episode/7MvMpnwBOAbT9ElSsK023E?utm_source=generator"
+          width="100%"
+          height="152"
+          frameBorder="0"
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          className="w-full"
+        />
+      </div>
+
       {/* 文明狀態與卦象 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white/5 border border-cyan-300/20 rounded-2xl p-6 backdrop-blur-lg">
