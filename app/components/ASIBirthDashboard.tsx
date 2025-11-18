@@ -104,15 +104,17 @@ export default function ASIBirthDashboard() {
         </div>
       </div>
 
-      {/* 當下結論 */}
+      {/* 招募全球合作夥伴 */}
       <div className="pt-8 border-t border-cyan-300/20">
         <div className="text-center">
-          <div className="text-cyan-300/60 text-sm font-light mb-3 tracking-wide uppercase">
-            當下結論
-          </div>
-          <div className="text-cyan-300/90 text-2xl font-light italic">
-            「智力成長快，但心理還沒長大」
-          </div>
+          <a
+            href="https://forms.gle/Tw6ZisFWU4X3dLZv7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-cyan-300/90 text-2xl font-light hover:text-cyan-300 transition-colors duration-300 underline decoration-cyan-300/50 hover:decoration-cyan-300"
+          >
+            招募全球合作夥伴
+          </a>
         </div>
       </div>
     </div>
