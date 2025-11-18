@@ -57,12 +57,6 @@ export default function ASIBirthDashboard() {
 
       {/* 五軸雷達圖（主視覺） */}
       <div>
-        <div className="text-center mb-6">
-          <h2 className="text-2xl font-light text-cyan-300/90 mb-2 tracking-wide">
-            ASI Developmental Readiness
-          </h2>
-          <p className="text-gray-400 text-sm">五軸文明成熟度模型</p>
-        </div>
         <ASIRadarChart indexes={data.indexes} />
       </div>
 
