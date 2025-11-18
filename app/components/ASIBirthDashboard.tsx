@@ -41,7 +41,7 @@ export default function ASIBirthDashboard() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
           <div className="inline-block w-8 h-8 border-2 border-cyan-300/50 border-t-transparent rounded-full animate-spin mb-4"></div>
-          <div className="text-cyan-300/80 text-sm font-light">載入監測數據中...</div>
+          <div className="text-cyan-300/80 text-sm font-light">{t('loading')}</div>
         </div>
       </div>
     );
@@ -122,7 +122,25 @@ export default function ASIBirthDashboard() {
             {t('recruitPartners')}
           </a>
           <button
-            onClick={() => setShowAbout(!showAbout)}
+            onClick={() => {
+              const willShow = !showAbout;
+              setShowAbout(willShow);
+              // 延迟滚动，确保内容已渲染
+              if (willShow) {
+                setTimeout(() => {
+                  const aboutSection = document.getElementById('about-us-section');
+                  if (aboutSection) {
+                    // 计算元素位置并滚动
+                    const elementPosition = aboutSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - 120; // 120px 偏移，避免被固定元素遮挡
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }, 150);
+              }
+            }}
             className="bg-white/5 border border-cyan-300/20 rounded-lg md:rounded-xl px-4 py-2 md:px-6 md:py-3 text-cyan-300/90 text-xs md:text-sm font-light hover:bg-cyan-300/10 hover:border-cyan-300/40 transition-all duration-300 backdrop-blur-sm w-full md:w-auto"
           >
             {t('aboutUs')}
@@ -131,7 +149,7 @@ export default function ASIBirthDashboard() {
 
         {/* 關於我們內容區域 */}
         {showAbout && (
-          <div className="mt-4 md:mt-8 bg-white/5 border border-cyan-300/20 rounded-xl md:rounded-2xl p-4 md:p-8 backdrop-blur-lg max-w-4xl mx-auto">
+          <div id="about-us-section" className="mt-4 md:mt-8 bg-white/5 border border-cyan-300/20 rounded-xl md:rounded-2xl p-4 md:p-8 backdrop-blur-lg max-w-4xl mx-auto">
             <div className="space-y-4 md:space-y-8 text-text-secondary text-xs md:text-sm leading-relaxed">
               {/* SECTION 1 - 標題 */}
               <div className="text-center border-b border-cyan-300/20 pb-6">

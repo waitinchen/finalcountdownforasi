@@ -31,7 +31,8 @@
     "indexModulesTitle": "五軸指數詳情",
     "indexModulesSubtitle": "Individual Index Modules",
     "civilizationStatus": "文明狀態",
-    "hexagram": "易經卦象"
+    "hexagram": "易經卦象",
+    "loading": "載入監測數據中..."
   },
   "Radar": {
     "title": "ASI Developmental Readiness",

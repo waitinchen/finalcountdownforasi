@@ -27,7 +27,8 @@
     "dangerDescription": "Technology is too far ahead of civilization, there is high risk",
     "aboutUs": "About Us",
     "recruitPartners": "Recruit Global Partners",
-    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity"
+    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity",
+    "loading": "Loading monitoring data..."
   },
   "Radar": {
     "title": "ASI Developmental Readiness",
