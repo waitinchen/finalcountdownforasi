@@ -1,7 +1,4 @@
-import MainGauge from './components/MainGauge'
-import DomainsGrid from './components/DomainsGrid'
-import DomainRadar from './components/DomainRadar'
-import FooterStatement from './components/FooterStatement'
+import DashboardNew from './components/DashboardNew'
 import DeveloperGuide from './components/DeveloperGuide'
 
 export default function Home() {
@@ -27,26 +24,8 @@ export default function Home() {
         <div className="w-24 h-0.5 bg-neon-blue/30 mx-auto"></div>
       </div>
 
-      {/* 主要內容網格 */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-12">
-        {/* 左側：主儀表 */}
-        <div className="flex">
-          <MainGauge />
-        </div>
-        
-        {/* 右側：雷達圖 - 展開到最右邊界 */}
-        <div className="flex w-full">
-          <DomainRadar />
-        </div>
-      </div>
-
-      {/* 五元素卡片區域 */}
-      <div className="mb-12">
-        <DomainsGrid />
-      </div>
-
-      {/* 文明宣言 */}
-      <FooterStatement />
+      {/* 新版儀表板 */}
+      <DashboardNew />
 
       {/* 開發者指南（右下角固定） */}
       <DeveloperGuide />

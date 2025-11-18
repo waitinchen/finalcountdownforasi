@@ -1,4 +1,58 @@
-import { ReadinessData } from './types';
+import { ReadinessData, CivilizationData } from './types';
+
+// 新的後端API URL
+const BACKEND_API_URL = 'https://script.google.com/macros/s/AKfycbx7MoRrJz-cWOPnH9S558HHK6DwUqBO16BrvF8gHnt-VDlnNWrdad0Lu-HrVkV4at3LKg/exec?type=five';
+
+/**
+ * 從新後端API獲取文明數據
+ */
+export async function fetchCivilizationData(): Promise<CivilizationData> {
+  try {
+    console.log('fetchCivilizationData: 開始請求新後端API...');
+    const response = await fetch(BACKEND_API_URL, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log('fetchCivilizationData: 數據獲取成功:', data);
+    return data;
+  } catch (error) {
+    console.error('Error fetching civilization data:', error);
+    // 返回預設數據
+    return {
+      timestamp: new Date().toISOString(),
+      components: 57,
+      infrastructure: 100,
+      convergence: 100,
+      tone: 4,
+      hcmi: 97,
+      tech: 83,
+      heart: 2,
+      readiness: 2,
+      balance: 0,
+      safetyBias: 81,
+      countdown: 50176,
+      civilization: '心靈文明',
+      hexagram: {
+        number: 14,
+        name: '第14卦',
+        fullName: '卦象 14',
+        symbol: '䷎',
+        judgment: '待解讀',
+        meaning: '文明正在經歷變化。',
+        yao: [0, 1, 1, 1, 0, 0],
+      },
+    };
+  }
+}
 
 // API 請求函式 - 優先使用 /api/sheets/civilization（從 Google Sheet 獲取數據）
 export async function fetchReadinessData(): Promise<ReadinessData> {

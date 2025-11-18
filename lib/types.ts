@@ -15,6 +15,34 @@ export interface ReadinessData {
   last_updated: string;
 }
 
+// 新的後端API數據結構
+export interface HexagramData {
+  number: number; // 卦序
+  name: string; // 卦名
+  fullName: string; // 完整卦名
+  symbol: string; // 卦象符號（如 ䷎）
+  judgment: string; // 卦辭
+  meaning: string; // 文明解讀
+  yao: number[]; // 六爻 [0,1,1,1,0,0] (0=陰, 1=陽)
+}
+
+export interface CivilizationData {
+  timestamp: string;
+  components: number;
+  infrastructure: number;
+  convergence: number;
+  tone: number;
+  hcmi?: number; // 可選
+  tech: number; // Tech Index
+  heart: number; // Heart Index
+  readiness: number; // Readiness Index
+  balance: number; // Balance Index
+  safetyBias: number; // Safety Bias
+  countdown: number; // Countdown Days
+  civilization: string; // 文明類型（如 "心靈文明"）
+  hexagram: HexagramData; // 易經卦象
+}
+
 // 領域標籤映射
 export const DOMAIN_LABELS = {
   tone: '①媒體語氣',
