@@ -44,6 +44,13 @@ export default function RootLayout({
         <div className="min-h-screen bg-space-gradient relative">
           {children}
         </div>
+        
+        {/* ElevenLabs ConvAI 客服對話 */}
+        <elevenlabs-convai agent-id="agent_1301kaakrq7afx0sxhvdxdpkab39"></elevenlabs-convai>
+        <Script
+          src="https://unpkg.com/@elevenlabs/convai-widget-embed"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
