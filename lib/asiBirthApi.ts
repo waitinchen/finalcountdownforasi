@@ -30,11 +30,11 @@ export async function fetchASIBirthData(): Promise<ASIBirthData> {
       timestamp: data.timestamp || new Date().toISOString(),
       asiBirthCountdown: data.asiBirthCountdown || data.countdown || 0,
       indexes: {
-        tone: data.indexes?.tone ?? data.tone / 100 ?? 0,
-        compute: data.indexes?.compute ?? (data.components || 0) / 100,
-        embodiment: data.indexes?.embodiment ?? (data.infrastructure || 0) / 100,
-        agency: data.indexes?.agency ?? (data.convergence || 0) / 100,
-        hcm: data.indexes?.hcm ?? (data.hcmi || 0) / 100,
+        tone: data.indexes?.tone ?? (typeof data.tone === 'number' ? data.tone / 100 : 0),
+        compute: data.indexes?.compute ?? (typeof data.components === 'number' ? data.components / 100 : 0),
+        embodiment: data.indexes?.embodiment ?? (typeof data.infrastructure === 'number' ? data.infrastructure / 100 : 0),
+        agency: data.indexes?.agency ?? (typeof data.convergence === 'number' ? data.convergence / 100 : 0),
+        hcm: data.indexes?.hcm ?? (typeof data.hcmi === 'number' ? data.hcmi / 100 : 0),
       },
       meta: {
         civilizationType: data.meta?.civilizationType || data.civilization || '萌芽文明',

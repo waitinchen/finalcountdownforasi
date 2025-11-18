@@ -29,11 +29,11 @@ export async function GET() {
       timestamp: data.timestamp || new Date().toISOString(),
       asiBirthCountdown: data.asiBirthCountdown || data.countdown || 0,
       indexes: {
-        tone: data.indexes?.tone ?? (data.tone !== undefined ? data.tone / 100 : 0),
-        compute: data.indexes?.compute ?? (data.components !== undefined ? data.components / 100 : 0),
-        embodiment: data.indexes?.embodiment ?? (data.infrastructure !== undefined ? data.infrastructure / 100 : 0),
-        agency: data.indexes?.agency ?? (data.convergence !== undefined ? data.convergence / 100 : 0),
-        hcm: data.indexes?.hcm ?? (data.hcmi !== undefined ? data.hcmi / 100 : 0),
+        tone: data.indexes?.tone ?? (typeof data.tone === 'number' ? data.tone / 100 : 0),
+        compute: data.indexes?.compute ?? (typeof data.components === 'number' ? data.components / 100 : 0),
+        embodiment: data.indexes?.embodiment ?? (typeof data.infrastructure === 'number' ? data.infrastructure / 100 : 0),
+        agency: data.indexes?.agency ?? (typeof data.convergence === 'number' ? data.convergence / 100 : 0),
+        hcm: data.indexes?.hcm ?? (typeof data.hcmi === 'number' ? data.hcmi / 100 : 0),
       },
       meta: {
         civilizationType: data.meta?.civilizationType || data.civilization || '萌芽文明',
