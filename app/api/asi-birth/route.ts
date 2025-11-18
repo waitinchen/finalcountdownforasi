@@ -27,12 +27,13 @@ export async function GET() {
     console.log('[/api/asi-birth] 數據獲取成功:', data);
     
     // 轉換為 ASIBirthData 格式
+    // 注意：這裡的 indexes 是 0-1 範圍，用於 v2.0 計算
     const indexes = {
       tone: data.indexes?.tone ?? (typeof data.tone === 'number' ? data.tone / 100 : 0),
       compute: data.indexes?.compute ?? (typeof data.components === 'number' ? data.components / 100 : 0),
       embodiment: data.indexes?.embodiment ?? (typeof data.infrastructure === 'number' ? data.infrastructure / 100 : 0),
       agency: data.indexes?.agency ?? (typeof data.convergence === 'number' ? data.convergence / 100 : 0),
-      hcm: data.indexes?.hcm ?? (typeof data.hcmi === 'number' ? data.hcmi / 100 : 0),
+      hcm: data.indexes?.hcm ?? (typeof data.hcmi === 'number' ? data.hcmi / 100 : 0.01), // 默認 0.01 而不是 0
     };
     
     // 計算 v2.0 倒數數據（保留兼容）
@@ -47,11 +48,24 @@ export async function GET() {
     const components = typeof data.components === 'number' ? data.components : (indexes.compute * 100);
     const infrastructure = typeof data.infrastructure === 'number' ? data.infrastructure : (indexes.embodiment * 100);
     const convergence = typeof data.convergence === 'number' ? data.convergence : (indexes.agency * 100);
-    const hcmi = typeof data.hcmi === 'number' ? data.hcmi : (indexes.hcm * 100);
+    
+    // 修正：確保 hcmi 正確獲取（優先使用原始數據，否則從 indexes 轉換）
+    let hcmi: number;
+    if (typeof data.hcmi === 'number' && data.hcmi > 0) {
+      hcmi = data.hcmi; // 原始數據是 0-100 範圍
+    } else if (indexes.hcm > 0) {
+      hcmi = indexes.hcm * 100; // 從 0-1 轉換為 0-100
+    } else {
+      hcmi = 1; // 默認值，避免為 0
+    }
+    
+    console.log('[/api/asi-birth] v2.5 計算 - hcmi:', hcmi, 'indexes.hcm:', indexes.hcm);
     
     const techLevel = calculateTechLevel(components, infrastructure, convergence);
     const civLevel = calculateCivLevel(hcmi);
+    console.log('[/api/asi-birth] v2.5 計算 - civLevel:', civLevel, 'techLevel:', techLevel);
     const v25 = calculateCountdownV25(techLevel, civLevel);
+    console.log('[/api/asi-birth] v2.5 計算結果:', v25);
     
     const birthData: ASIBirthData = {
       timestamp: data.timestamp || new Date().toISOString(),

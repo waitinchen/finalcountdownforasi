@@ -16,7 +16,7 @@ export default function Home() {
       {/* 標題區 */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-extralight text-cyan-300/90 mb-2 tracking-wider uppercase">
-          ASI 出生監測儀表板
+          超級智能體出生監測儀表板
         </h1>
         <p className="text-gray-400 text-base font-light mb-4">
           ASI Birth Monitoring Dashboard
