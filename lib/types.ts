@@ -35,10 +35,18 @@ export interface ASIBirthIndexes {
   hcm: number; // 心理共鳴指數 (0-1)
 }
 
+export interface CountdownData {
+  readyScore: number; // 文明成熟度 (0-1)
+  scienceYears: number; // 科學模型年數
+  fastYears: number; // 加速模型年數
+  scienceDays: number; // 科學模型天數
+  fastDays: number; // 加速模型天數
+}
+
 export interface ASIBirthData {
   timestamp: string;
-  asiBirthCountdown: number; // ASI 誕生倒數天數
   indexes: ASIBirthIndexes; // 五軸指數
+  countdown: CountdownData; // 倒數數據（v1.1 新格式）
   meta: {
     civilizationType: string; // 文明類型（如 "暴衝文明"）
     hexagram: {
@@ -46,6 +54,8 @@ export interface ASIBirthData {
       name: string;
     };
   };
+  // 兼容舊格式
+  asiBirthCountdown?: number; // 舊版倒數天數（已棄用）
 }
 
 // 兼容舊的數據結構（用於過渡期）

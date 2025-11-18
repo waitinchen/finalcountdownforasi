@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { ASIBirthData } from '@/lib/types';
-import { fetchASIBirthData, calculateReadinessScore } from '@/lib/asiBirthApi';
+import { fetchASIBirthData } from '@/lib/asiBirthApi';
 import ASIBirthCountdown from './ASIBirthCountdown';
 import ASIRadarChart from './ASIRadarChart';
 import ASIIndexModules from './ASIIndexModules';
@@ -43,16 +43,11 @@ export default function ASIBirthDashboard() {
     );
   }
 
-  const readinessScore = calculateReadinessScore(data.indexes);
-
   return (
     <div className="space-y-12">
       {/* 上層：ASI 誕生進度 · 總覽 */}
       <div className="flex flex-col items-center">
-        <ASIBirthCountdown 
-          countdown={data.asiBirthCountdown}
-          readinessScore={readinessScore}
-        />
+        <ASIBirthCountdown countdown={data.countdown} />
       </div>
 
       {/* 五軸雷達圖（主視覺） */}
