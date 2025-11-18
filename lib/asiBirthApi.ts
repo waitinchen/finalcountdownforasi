@@ -1,16 +1,16 @@
 // ASI 出生監測儀表板 API
 import { ASIBirthData, ASIBirthIndexes } from './types';
 
-// 新的後端API URL
-const ASI_BIRTH_API_URL = 'https://script.google.com/macros/s/AKfycbzTpW8Hewr3b5Z1hj1qN_K8cMstp2NHlU4XlbpqN8ei10KPFytD9odF-Hf0qYLks8_FnQ/exec?type=five';
-
 /**
  * 從後端API獲取 ASI 出生監測數據
+ * 通過 Next.js API 路由代理，避免 CORS 問題
  */
 export async function fetchASIBirthData(): Promise<ASIBirthData> {
   try {
     console.log('fetchASIBirthData: 開始請求後端API...');
-    const response = await fetch(ASI_BIRTH_API_URL, {
+    
+    // 使用 Next.js API 路由代理請求，避免 CORS 問題
+    const response = await fetch('/api/asi-birth', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
