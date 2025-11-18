@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { ASIBirthData } from '@/lib/types';
 import { fetchASIBirthData } from '@/lib/asiBirthApi';
-import ASIBirthCountdown from './ASIBirthCountdown';
 import ASIRadarChart from './ASIRadarChart';
 import ASIIndexModules from './ASIIndexModules';
 import V2CountdownPanels from './V2CountdownPanels';
@@ -52,11 +51,6 @@ export default function ASIBirthDashboard() {
           <V2CountdownPanels v25Data={data.v25} v2Data={data.v2} />
         </div>
       )}
-
-      {/* v1.1 倒數（保留兼容） */}
-      <div className="flex flex-col items-center">
-        <ASIBirthCountdown countdown={data.countdown} />
-      </div>
 
       {/* 五軸雷達圖（主視覺） */}
       <div>

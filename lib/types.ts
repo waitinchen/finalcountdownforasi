@@ -83,7 +83,7 @@ export interface V25CountdownData {
 export interface ASIBirthData {
   timestamp: string;
   indexes: ASIBirthIndexes; // 五軸指數
-  countdown: CountdownData; // 倒數數據（v1.1 格式，保留兼容）
+  countdown?: CountdownData; // 倒數數據（v1.1 格式，已棄用）
   v2?: V2CountdownData; // v2.0 格式（保留兼容）
   v25?: V25CountdownData; // v2.5 新格式（主要使用）
   narrative?: NarrativeData; // 敘事數據

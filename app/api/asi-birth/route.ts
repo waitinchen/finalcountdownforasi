@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { ASIBirthData, NarrativeData } from '@/lib/types';
-import { calculateCountdown } from '@/lib/asiBirthApi';
 import { calculateV2Countdown } from '@/lib/v2Countdown';
 import { calculateCountdownV25, calculateTechLevel, calculateCivLevel } from '@/lib/calculateCountdownV25';
 
@@ -36,9 +35,6 @@ export async function GET() {
       hcm: data.indexes?.hcm ?? (typeof data.hcmi === 'number' ? data.hcmi / 100 : 0),
     };
     
-    // 計算倒數數據（v1.1 新公式）
-    const countdown = calculateCountdown(indexes);
-    
     // 計算 v2.0 倒數數據（保留兼容）
     const narrative: NarrativeData | undefined = data.narrative ? {
       today: data.narrative.today || 50,
@@ -60,7 +56,6 @@ export async function GET() {
     const birthData: ASIBirthData = {
       timestamp: data.timestamp || new Date().toISOString(),
       indexes,
-      countdown,
       v2,
       v25,
       narrative,
@@ -71,8 +66,6 @@ export async function GET() {
           name: data.meta?.hexagram?.name || data.hexagram?.name || '',
         },
       },
-      // 兼容舊格式
-      asiBirthCountdown: data.asiBirthCountdown || data.countdown || countdown.scienceDays,
     };
 
     return NextResponse.json(birthData);
@@ -87,7 +80,6 @@ export async function GET() {
       agency: 0.2882,
       hcm: 0.01,
     };
-    const fallbackCountdown = calculateCountdown(fallbackIndexes);
     const fallbackV2 = calculateV2Countdown(fallbackIndexes);
     
     // 計算 v2.5 fallback 數據
@@ -98,7 +90,6 @@ export async function GET() {
     const fallbackData: ASIBirthData = {
       timestamp: new Date().toISOString(),
       indexes: fallbackIndexes,
-      countdown: fallbackCountdown,
       v2: fallbackV2,
       v25: fallbackV25,
       meta: {
@@ -108,7 +99,6 @@ export async function GET() {
           name: '師',
         },
       },
-      asiBirthCountdown: fallbackCountdown.scienceDays,
     };
 
     return NextResponse.json(fallbackData);
