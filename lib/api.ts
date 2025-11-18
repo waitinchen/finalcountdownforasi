@@ -1,7 +1,7 @@
 import { ReadinessData, CivilizationData } from './types';
 
 // 新的後端API URL
-const BACKEND_API_URL = 'https://script.google.com/macros/s/AKfycbx7MoRrJz-cWOPnH9S558HHK6DwUqBO16BrvF8gHnt-VDlnNWrdad0Lu-HrVkV4at3LKg/exec?type=five';
+const BACKEND_API_URL = 'https://script.google.com/macros/s/AKfycbzTpW8Hewr3b5Z1hj1qN_K8cMstp2NHlU4XlbpqN8ei10KPFytD9odF-Hf0qYLks8_FnQ/exec?type=five';
 
 /**
  * 從新後端API獲取文明數據
