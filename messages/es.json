@@ -27,7 +27,11 @@
     "dangerDescription": "La tecnología está muy por delante de la civilización, existe un alto riesgo",
     "aboutUs": "Acerca de nosotros",
     "recruitPartners": "Reclutar socios globales",
-    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity"
+    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity",
+    "indexModulesTitle": "Detalles del Índice de Cinco Ejes",
+    "indexModulesSubtitle": "Módulos de Índice Individual",
+    "civilizationStatus": "Estado de la Civilización",
+    "hexagram": "Hexagrama del I Ching"
   },
   "Radar": {
     "title": "Preparación para el Desarrollo de ASI",

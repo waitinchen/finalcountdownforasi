@@ -70,9 +70,9 @@ export default function ASIBirthDashboard() {
       <div>
         <div className="text-center mb-6">
           <h2 className="text-xl font-light text-cyan-300/90 mb-2 tracking-wide">
-            五軸指數詳情
+            {t('indexModulesTitle')}
           </h2>
-          <p className="text-gray-400 text-xs">Individual Index Modules</p>
+          <p className="text-gray-400 text-xs">{t('indexModulesSubtitle')}</p>
         </div>
         <ASIIndexModules indexes={data.indexes} />
       </div>
@@ -96,11 +96,11 @@ export default function ASIBirthDashboard() {
       {/* 文明狀態與卦象 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white/5 border border-cyan-300/20 rounded-2xl p-6 backdrop-blur-lg">
-          <h3 className="text-cyan-300/90 text-lg font-light mb-3">文明狀態</h3>
+          <h3 className="text-cyan-300/90 text-lg font-light mb-3">{t('civilizationStatus')}</h3>
           <p className="text-white/80 text-2xl font-light">{data.meta.civilizationType}</p>
         </div>
         <div className="bg-white/5 border border-cyan-300/20 rounded-2xl p-6 backdrop-blur-lg">
-          <h3 className="text-cyan-300/90 text-lg font-light mb-3">易經卦象</h3>
+          <h3 className="text-cyan-300/90 text-lg font-light mb-3">{t('hexagram')}</h3>
           <p className="text-white/80 text-xl font-light">
             {data.meta.hexagram.number > 0 ? `第${data.meta.hexagram.number}卦 · ${data.meta.hexagram.name}` : '待更新'}
           </p>

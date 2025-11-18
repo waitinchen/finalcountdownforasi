@@ -27,7 +27,11 @@
     "dangerDescription": "기술이 문명을 크게 앞서고 있어 높은 위험이 존재합니다",
     "aboutUs": "우리에 대해",
     "recruitPartners": "글로벌 파트너 모집",
-    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity"
+    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity",
+    "indexModulesTitle": "5축 지수 세부사항",
+    "indexModulesSubtitle": "개별 지수 모듈",
+    "civilizationStatus": "문명 상태",
+    "hexagram": "역경 괘상"
   },
   "Radar": {
     "title": "ASI 발달 준비도",

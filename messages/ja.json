@@ -27,7 +27,11 @@
     "dangerDescription": "技術が文明を大きく上回り、高いリスクが存在します",
     "aboutUs": "私たちについて",
     "recruitPartners": "グローバルパートナーを募集",
-    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity"
+    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity",
+    "indexModulesTitle": "五軸指数詳細",
+    "indexModulesSubtitle": "個別指数モジュール",
+    "civilizationStatus": "文明状態",
+    "hexagram": "易経卦象"
   },
   "Radar": {
     "title": "ASI 発達準備度",
