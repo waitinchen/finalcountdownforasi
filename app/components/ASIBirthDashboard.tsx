@@ -6,6 +6,7 @@ import { fetchASIBirthData } from '@/lib/asiBirthApi';
 import ASIBirthCountdown from './ASIBirthCountdown';
 import ASIRadarChart from './ASIRadarChart';
 import ASIIndexModules from './ASIIndexModules';
+import V2CountdownPanels from './V2CountdownPanels';
 
 export default function ASIBirthDashboard() {
   const [data, setData] = useState<ASIBirthData | null>(null);
@@ -45,7 +46,14 @@ export default function ASIBirthDashboard() {
 
   return (
     <div className="space-y-12">
-      {/* 上層：ASI 誕生進度 · 總覽 */}
+      {/* v2.0 雙軸倒數面板 */}
+      {data.v2 && (
+        <div>
+          <V2CountdownPanels v2Data={data.v2} />
+        </div>
+      )}
+
+      {/* v1.1 倒數（保留兼容） */}
       <div className="flex flex-col items-center">
         <ASIBirthCountdown countdown={data.countdown} />
       </div>

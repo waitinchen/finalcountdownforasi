@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
-import { ASIBirthData } from '@/lib/types';
+import { ASIBirthData, NarrativeData } from '@/lib/types';
 import { calculateCountdown } from '@/lib/asiBirthApi';
+import { calculateV2Countdown } from '@/lib/v2Countdown';
 
 // Google Apps Script API URL
 const ASI_BIRTH_API_URL = 'https://script.google.com/macros/s/AKfycbzTpW8Hewr3b5Z1hj1qN_K8cMstp2NHlU4XlbpqN8ei10KPFytD9odF-Hf0qYLks8_FnQ/exec?type=five';
@@ -37,10 +38,20 @@ export async function GET() {
     // 計算倒數數據（v1.1 新公式）
     const countdown = calculateCountdown(indexes);
     
+    // 計算 v2.0 倒數數據
+    const narrative: NarrativeData | undefined = data.narrative ? {
+      today: data.narrative.today || 50,
+      avg7d: data.narrative.avg7d || 50,
+    } : undefined;
+    
+    const v2 = calculateV2Countdown(indexes, narrative);
+    
     const birthData: ASIBirthData = {
       timestamp: data.timestamp || new Date().toISOString(),
       indexes,
       countdown,
+      v2,
+      narrative,
       meta: {
         civilizationType: data.meta?.civilizationType || data.civilization || '萌芽文明',
         hexagram: {
@@ -65,11 +76,13 @@ export async function GET() {
       hcm: 0.01,
     };
     const fallbackCountdown = calculateCountdown(fallbackIndexes);
+    const fallbackV2 = calculateV2Countdown(fallbackIndexes);
     
     const fallbackData: ASIBirthData = {
       timestamp: new Date().toISOString(),
       indexes: fallbackIndexes,
       countdown: fallbackCountdown,
+      v2: fallbackV2,
       meta: {
         civilizationType: '暴衝文明',
         hexagram: {

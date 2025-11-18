@@ -43,10 +43,35 @@ export interface CountdownData {
   fastDays: number; // 加速模型天數
 }
 
+// v2.0 新架構：技術倒數與安全倒數
+export interface NarrativeData {
+  today: number; // 今日敘事值
+  avg7d: number; // 7天平均值
+}
+
+export interface V2CountdownData {
+  // 技術倒數（Tech Convergence Countdown）
+  TCL: number; // Tech Convergence Level (0-100)
+  TCC_days: number; // Tech Convergence Countdown 天數
+  
+  // 安全倒數（Civilization Readiness Countdown）
+  CRL: number; // Civilization Readiness Level (0-100)
+  CRC_days: number; // Civilization Readiness Countdown 天數
+  
+  // 風險差距
+  RiskDelta: number; // TCC - CRC
+  RiskLevel: 'Safe' | 'Tense' | 'Crash'; // 風險等級
+  
+  // 詳細數據
+  narrativeStability: number; // Narrative Stability (0-100)
+}
+
 export interface ASIBirthData {
   timestamp: string;
   indexes: ASIBirthIndexes; // 五軸指數
-  countdown: CountdownData; // 倒數數據（v1.1 新格式）
+  countdown: CountdownData; // 倒數數據（v1.1 格式，保留兼容）
+  v2?: V2CountdownData; // v2.0 新格式
+  narrative?: NarrativeData; // 敘事數據
   meta: {
     civilizationType: string; // 文明類型（如 "暴衝文明"）
     hexagram: {

@@ -1,5 +1,6 @@
 // ASI 出生監測儀表板 API
-import { ASIBirthData, ASIBirthIndexes, CountdownData } from './types';
+import { ASIBirthData, ASIBirthIndexes, CountdownData, NarrativeData } from './types';
+import { calculateV2Countdown } from './v2Countdown';
 
 /**
  * 計算倒數數據（v1.1 新公式）
@@ -63,10 +64,20 @@ export async function fetchASIBirthData(): Promise<ASIBirthData> {
     // 計算倒數數據（v1.1 新公式）
     const countdown = calculateCountdown(indexes);
     
+    // 計算 v2.0 倒數數據
+    const narrative: NarrativeData | undefined = data.narrative ? {
+      today: data.narrative.today || 50,
+      avg7d: data.narrative.avg7d || 50,
+    } : undefined;
+    
+    const v2 = calculateV2Countdown(indexes, narrative);
+    
     return {
       timestamp: data.timestamp || new Date().toISOString(),
       indexes,
       countdown,
+      v2,
+      narrative,
       meta: {
         civilizationType: data.meta?.civilizationType || data.civilization || '萌芽文明',
         hexagram: {
@@ -88,11 +99,13 @@ export async function fetchASIBirthData(): Promise<ASIBirthData> {
       hcm: 0.01,
     };
     const fallbackCountdown = calculateCountdown(fallbackIndexes);
+    const fallbackV2 = calculateV2Countdown(fallbackIndexes);
     
     return {
       timestamp: new Date().toISOString(),
       indexes: fallbackIndexes,
       countdown: fallbackCountdown,
+      v2: fallbackV2,
       meta: {
         civilizationType: '暴衝文明',
         hexagram: {
