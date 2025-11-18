@@ -1,6 +1,7 @@
 // ASI 出生監測儀表板 API
 import { ASIBirthData, ASIBirthIndexes, CountdownData, NarrativeData } from './types';
 import { calculateV2Countdown } from './v2Countdown';
+import { calculateCountdownV25, calculateTechLevel, calculateCivLevel } from './calculateCountdownV25';
 
 /**
  * 計算倒數數據（v1.1 新公式）
@@ -64,7 +65,7 @@ export async function fetchASIBirthData(): Promise<ASIBirthData> {
     // 計算倒數數據（v1.1 新公式）
     const countdown = calculateCountdown(indexes);
     
-    // 計算 v2.0 倒數數據
+    // 計算 v2.0 倒數數據（保留兼容）
     const narrative: NarrativeData | undefined = data.narrative ? {
       today: data.narrative.today || 50,
       avg7d: data.narrative.avg7d || 50,
@@ -72,11 +73,23 @@ export async function fetchASIBirthData(): Promise<ASIBirthData> {
     
     const v2 = calculateV2Countdown(indexes, narrative);
     
+    // 計算 v2.5 倒數數據（新核心模型）
+    // 從原始數據獲取 components, infrastructure, convergence, hcmi
+    const components = typeof data.components === 'number' ? data.components : (indexes.compute * 100);
+    const infrastructure = typeof data.infrastructure === 'number' ? data.infrastructure : (indexes.embodiment * 100);
+    const convergence = typeof data.convergence === 'number' ? data.convergence : (indexes.agency * 100);
+    const hcmi = typeof data.hcmi === 'number' ? data.hcmi : (indexes.hcm * 100);
+    
+    const techLevel = calculateTechLevel(components, infrastructure, convergence);
+    const civLevel = calculateCivLevel(hcmi);
+    const v25 = calculateCountdownV25(techLevel, civLevel);
+    
     return {
       timestamp: data.timestamp || new Date().toISOString(),
       indexes,
       countdown,
       v2,
+      v25,
       narrative,
       meta: {
         civilizationType: data.meta?.civilizationType || data.civilization || '萌芽文明',
@@ -101,11 +114,17 @@ export async function fetchASIBirthData(): Promise<ASIBirthData> {
     const fallbackCountdown = calculateCountdown(fallbackIndexes);
     const fallbackV2 = calculateV2Countdown(fallbackIndexes);
     
+    // 計算 v2.5 fallback 數據
+    const fallbackTechLevel = calculateTechLevel(51, 59.28, 28.82);
+    const fallbackCivLevel = calculateCivLevel(1);
+    const fallbackV25 = calculateCountdownV25(fallbackTechLevel, fallbackCivLevel);
+    
     return {
       timestamp: new Date().toISOString(),
       indexes: fallbackIndexes,
       countdown: fallbackCountdown,
       v2: fallbackV2,
+      v25: fallbackV25,
       meta: {
         civilizationType: '暴衝文明',
         hexagram: {

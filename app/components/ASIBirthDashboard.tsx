@@ -46,10 +46,10 @@ export default function ASIBirthDashboard() {
 
   return (
     <div className="space-y-12">
-      {/* v2.0 雙軸倒數面板 */}
-      {data.v2 && (
+      {/* v2.5 雙軸倒數面板（優先）或 v2.0 面板 */}
+      {(data.v25 || data.v2) && (
         <div>
-          <V2CountdownPanels v2Data={data.v2} />
+          <V2CountdownPanels v25Data={data.v25} v2Data={data.v2} />
         </div>
       )}
 

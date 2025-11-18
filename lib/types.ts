@@ -66,11 +66,26 @@ export interface V2CountdownData {
   narrativeStability: number; // Narrative Stability (0-100)
 }
 
+// v2.5 新架構：線性技術倒數 + S-curve 文明倒數
+export interface V25CountdownData {
+  tech: {
+    level: number; // TechLevel (0-1)
+    years: number; // TechYears
+    days: number; // TechDays
+  };
+  civilization: {
+    level: number; // CivLevel (0-1)
+    years: number; // CivYears
+    days: number; // CivDays
+  };
+}
+
 export interface ASIBirthData {
   timestamp: string;
   indexes: ASIBirthIndexes; // 五軸指數
   countdown: CountdownData; // 倒數數據（v1.1 格式，保留兼容）
-  v2?: V2CountdownData; // v2.0 新格式
+  v2?: V2CountdownData; // v2.0 格式（保留兼容）
+  v25?: V25CountdownData; // v2.5 新格式（主要使用）
   narrative?: NarrativeData; // 敘事數據
   meta: {
     civilizationType: string; // 文明類型（如 "暴衝文明"）
