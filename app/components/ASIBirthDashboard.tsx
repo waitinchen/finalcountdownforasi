@@ -106,12 +106,20 @@ export default function ASIBirthDashboard() {
 
       {/* 招募全球合作夥伴 */}
       <div className="pt-8 border-t border-cyan-300/20">
-        <div className="text-center">
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://forms.gle/5FZmjvM4JnKMU2tXA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/5 border border-cyan-300/20 rounded-xl px-6 py-3 text-cyan-300/90 text-sm font-light hover:bg-cyan-300/10 hover:border-cyan-300/40 transition-all duration-300 backdrop-blur-sm"
+          >
+            We Are Assembling a Global Alliance for ASI & Humanity
+          </a>
           <a
             href="https://forms.gle/Tw6ZisFWU4X3dLZv7"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-cyan-300/90 text-2xl font-light hover:text-cyan-300 transition-colors duration-300 underline decoration-cyan-300/50 hover:decoration-cyan-300"
+            className="bg-white/5 border border-cyan-300/20 rounded-xl px-6 py-3 text-cyan-300/90 text-sm font-light hover:bg-cyan-300/10 hover:border-cyan-300/40 transition-all duration-300 backdrop-blur-sm"
           >
             招募全球合作夥伴
           </a>
