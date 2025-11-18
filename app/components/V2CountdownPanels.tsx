@@ -78,23 +78,13 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
 
   return (
     <div className="space-y-8">
-      {/* 標題 */}
-      <div className="text-center">
-        <h2 className="text-2xl font-light text-cyan-300/90 mb-2 tracking-wide">
-          ASI Countdown Dashboard {useV25 ? 'v2.5' : 'v2.0'}
-        </h2>
-        <p className="text-gray-400 text-sm">
-          {useV25 ? '線性技術倒數 + S-curve 文明倒數' : '雙軸文明時間軸監測'}
-        </p>
-      </div>
-
       {/* 兩個倒數面板 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* A. Tech Convergence Countdown */}
         <div className="bg-white/5 border border-cyan-300/20 rounded-2xl p-8 backdrop-blur-lg">
           <div className="text-center">
             <div className="text-cyan-300/60 text-sm font-light mb-4 tracking-wide uppercase">
-              Tech Convergence Countdown
+              技術達標 Tech Convergence Countdown
             </div>
             <div className="text-cyan-300/90 text-5xl font-thin mb-2 tabular-nums">
               {Math.round(animatedTechDays).toLocaleString('zh-TW')}
@@ -121,7 +111,7 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
         <div className="bg-white/5 border border-purple-300/20 rounded-2xl p-8 backdrop-blur-lg">
           <div className="text-center">
             <div className="text-purple-300/60 text-sm font-light mb-4 tracking-wide uppercase">
-              Civilization Readiness Countdown
+              安全達標 Civilization Readiness Countdown
             </div>
             <div className="text-purple-300/90 text-5xl font-thin mb-2 tabular-nums">
               {Math.round(animatedCivDays).toLocaleString('zh-TW')}
@@ -150,7 +140,7 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
         <div className={`border-2 rounded-2xl p-8 backdrop-blur-lg ${riskColorClass}`}>
           <div className="text-center">
             <div className="text-sm font-light mb-4 tracking-wide uppercase opacity-80">
-              Risk Delta
+              偏差 Risk Delta
             </div>
             <div className={`text-4xl font-thin mb-2 tabular-nums ${
               riskLevel === 'Safe' ? 'text-green-400' :
