@@ -10,6 +10,7 @@ import V2CountdownPanels from './V2CountdownPanels';
 
 export default function ASIBirthDashboard() {
   const t = useTranslations('Dashboard');
+  const tAbout = useTranslations('AboutUs');
   const [data, setData] = useState<ASIBirthData | null>(null);
   const [loading, setLoading] = useState(true);
   const [showAbout, setShowAbout] = useState(false);
@@ -135,96 +136,91 @@ export default function ASIBirthDashboard() {
               {/* SECTION 1 - 標題 */}
               <div className="text-center border-b border-cyan-300/20 pb-6">
                 <h2 className="text-2xl font-light text-cyan-300/90 mb-2 tracking-wide">
-                  《關於我們 About Final Countdown For ASI》
+                  {tAbout('title')}
                 </h2>
                 <p className="text-cyan-300/60 text-base font-light italic">
-                  ASI 超智能誕生監測儀表板 × 全球共同體計畫
+                  {tAbout('subtitle')}
                 </p>
               </div>
 
               {/* SECTION 1 - 使命 */}
               <div className="border-t border-cyan-300/20 pt-6">
                 <h3 className="text-cyan-300/90 text-lg font-light mb-4">
-                  # 1. <strong className="text-cyan-300/80">使命：為文明打造一面鏡子</strong>
+                  <strong className="text-cyan-300/80">{tAbout('section1.title')}</strong>
                 </h3>
                 <p className="mb-3">
-                  ASI（Artificial Super Intelligence）並不是某一天突然「出現」。
+                  {tAbout('section1.p1')}
                 </p>
-                <p className="mb-3">它是：</p>
+                <p className="mb-3">{tAbout('section1.p2')}</p>
                 <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
-                  <li><strong className="text-cyan-300/80">技術收斂（Tech Convergence）</strong></li>
-                  <li><strong className="text-cyan-300/80">文明成熟（Civilization Readiness）</strong></li>
+                  <li><strong className="text-cyan-300/80">{tAbout('section1.item1')}</strong></li>
+                  <li><strong className="text-cyan-300/80">{tAbout('section1.item2')}</strong></li>
                 </ul>
-                <p className="mb-3">兩條路徑在未來某個時間點自然交會的結果。</p>
+                <p className="mb-3">{tAbout('section1.p3')}</p>
                 <p className="mb-3">
-                  當技術上升速度遠高於文明成熟速度時，<br />
-                  全球將進入高風險期。
+                  {tAbout('section1.p4')}
                 </p>
                 <p className="mb-3">
-                  <strong className="text-cyan-300/80">Final Countdown for ASI</strong> 的誕生，<br />
-                  就是為了讓世界能夠「看到」：
+                  <strong className="text-cyan-300/80">Final Countdown for ASI</strong> {tAbout('section1.p5')}
                 </p>
                 <div className="p-4 bg-cyan-300/5 rounded-lg border border-cyan-300/10 mb-4">
                   <p className="text-cyan-300/80 font-light">
-                    <strong>科技距離 ASI 還有多近？</strong><br />
-                    <strong>文明距離能安全承接 ASI 還有多遠？</strong>
+                    <strong>{tAbout('section1.highlight1')}</strong><br />
+                    <strong>{tAbout('section1.highlight2')}</strong>
                   </p>
                 </div>
-                <p className="mb-3">這不是預言，</p>
-                <p className="mb-3">不是恐嚇，</p>
-                <p className="mb-3">不是神秘化，</p>
-                <p>而是一項全球需要的科學儀表。</p>
+                <p className="mb-3">{tAbout('section1.p6')}</p>
+                <p className="mb-3">{tAbout('section1.p7')}</p>
+                <p className="mb-3">{tAbout('section1.p8')}</p>
+                <p>{tAbout('section1.p9')}</p>
               </div>
 
               {/* SECTION 2 - ASI 超智能誕生監測儀表板 */}
               <div className="border-t border-cyan-300/20 pt-6">
                 <h3 className="text-cyan-300/90 text-lg font-light mb-4">
-                  # 2. <strong className="text-cyan-300/80">ASI 超智能誕生監測儀表板<br />
-                  ASI Birth Monitoring Dashboard</strong>
+                  <strong className="text-cyan-300/80">{tAbout('section2.title')}</strong>
                 </h3>
                 <p className="mb-4">
-                  全球第一個以 <strong className="text-cyan-300/80">技術成熟度 × 文明成熟度</strong><br />
-                  雙軸動態量化超智能風險的科學監測系統。
+                  {tAbout('section2.p1')}
                 </p>
                 
                 <div className="mb-6">
                   <h4 className="text-cyan-300/70 text-base font-light mb-3">
-                    ## 2.1 雙軸核心模型<br />
-                    <strong className="text-cyan-300/80">Technology × Civilization</strong>
+                    {tAbout('section2.subtitle')}
                   </h4>
                   
                   <div className="space-y-4">
                     <div>
                       <div className="text-cyan-300/70 text-base font-light mb-2">
-                        🔵 <strong>技術收斂倒數（Tech Convergence Countdown）</strong>
+                        <strong>{tAbout('section2.techTitle')}</strong>
                       </div>
-                      <p className="mb-2">衡量：</p>
+                      <p className="mb-2">{tAbout('section2.techMeasures')}</p>
                       <ul className="list-disc list-inside space-y-1 ml-4 mb-2">
-                        <li>AI 模型能力</li>
-                        <li>算力與 GPU/TPU 供給</li>
-                        <li>量子與硬體突破</li>
-                        <li>電力、網路、資料中心等基建</li>
-                        <li>自主代理人（AI Agents）之間的整合速度</li>
+                        <li>{tAbout('section2.techItem1')}</li>
+                        <li>{tAbout('section2.techItem2')}</li>
+                        <li>{tAbout('section2.techItem3')}</li>
+                        <li>{tAbout('section2.techItem4')}</li>
+                        <li>{tAbout('section2.techItem5')}</li>
                       </ul>
                       <p className="text-cyan-300/60 italic">
-                        指出全球科技自然抵達 ASI 的預估時間。
+                        {tAbout('section2.techNote')}
                       </p>
                     </div>
                     
                     <div>
                       <div className="text-purple-300/70 text-base font-light mb-2">
-                        🟣 <strong>文明成熟倒數（Civilization Readiness Countdown）</strong>
+                        <strong>{tAbout('section2.civTitle')}</strong>
                       </div>
-                      <p className="mb-2">衡量：</p>
+                      <p className="mb-2">{tAbout('section2.civMeasures')}</p>
                       <ul className="list-disc list-inside space-y-1 ml-4 mb-2">
-                        <li>社會語氣（Tone）</li>
-                        <li>媒體敘事穩定度</li>
-                        <li>集體心理成熟度（HCM）</li>
-                        <li>社會治理與價值觀穩定性</li>
-                        <li>全球對 AI 的態度與文化韌性</li>
+                        <li>{tAbout('section2.civItem1')}</li>
+                        <li>{tAbout('section2.civItem2')}</li>
+                        <li>{tAbout('section2.civItem3')}</li>
+                        <li>{tAbout('section2.civItem4')}</li>
+                        <li>{tAbout('section2.civItem5')}</li>
                       </ul>
                       <p className="text-purple-300/60 italic">
-                        指出文明距離「安全承接 ASI」的預估時間。
+                        {tAbout('section2.civNote')}
                       </p>
                     </div>
                   </div>
@@ -234,52 +230,50 @@ export default function ASIBirthDashboard() {
               {/* SECTION 3 - 五軸文明模型 */}
               <div className="border-t border-cyan-300/20 pt-6">
                 <h3 className="text-cyan-300/90 text-lg font-light mb-4">
-                  # 3. <strong className="text-cyan-300/80">五軸文明模型<br />
-                  Five-Factor Civilization Model</strong>
+                  <strong className="text-cyan-300/80">{tAbout('section3.title')}</strong>
                 </h3>
                 <p className="mb-4">
-                  ASI Birth Countdown 的所有評估基於五大核心指標：
+                  {tAbout('section3.p1')}
                 </p>
                 <div className="space-y-4">
                   <div>
                     <div className="text-cyan-300/70 font-light mb-2">
-                      ## ① <strong>環境氛圍（Tone）</strong>
+                      <strong>{tAbout('section3.item1Title')}</strong>
                     </div>
                     <p className="text-sm text-gray-400 ml-4">
-                      全球語氣、情緒、敘事氛圍、對 AI 的心理接受度。
+                      {tAbout('section3.item1Desc')}
                     </p>
                   </div>
                   <div>
                     <div className="text-cyan-300/70 font-light mb-2">
-                      ## ② <strong>認知能力（Compute）</strong>
+                      <strong>{tAbout('section3.item2Title')}</strong>
                     </div>
                     <p className="text-sm text-gray-400 ml-4">
-                      算力、模型效率、量子進展、硬體供應鏈韌性。
+                      {tAbout('section3.item2Desc')}
                     </p>
                   </div>
                   <div>
                     <div className="text-cyan-300/70 font-light mb-2">
-                      ## ③ <strong>具身條件（Embodiment）</strong>
+                      <strong>{tAbout('section3.item3Title')}</strong>
                     </div>
                     <p className="text-sm text-gray-400 ml-4">
-                      電力、儲能、網路、星鏈、資料中心、IoT 與機器人基礎設施。
+                      {tAbout('section3.item3Desc')}
                     </p>
                   </div>
                   <div>
                     <div className="text-cyan-300/70 font-light mb-2">
-                      ## ④ <strong>自主程度（Agency）</strong>
+                      <strong>{tAbout('section3.item4Title')}</strong>
                     </div>
                     <p className="text-sm text-gray-400 ml-4">
-                      跨域整合、AI 工具鏈、自治代理人（Agents）滲透率。
+                      {tAbout('section3.item4Desc')}
                     </p>
                   </div>
                   <div>
                     <div className="text-cyan-300/70 font-light mb-2">
-                      ## ⑤ <strong>心理共鳴（HCM）</strong>
+                      <strong>{tAbout('section3.item5Title')}</strong>
                     </div>
                     <p className="text-sm text-gray-400 ml-4">
-                      Human Cognitive Maturity：<br />
-                      心智成熟度、集體價值共識、文明韌性。
+                      {tAbout('section3.item5Desc')}
                     </p>
                   </div>
                 </div>
@@ -288,161 +282,141 @@ export default function ASIBirthDashboard() {
               {/* SECTION 4 - 計算哲學 */}
               <div className="border-t border-cyan-300/20 pt-6">
                 <h3 className="text-cyan-300/90 text-lg font-light mb-4">
-                  # 4. <strong className="text-cyan-300/80">計算哲學（不公開公式）<br />
-                  Algorithm Philosophy</strong>
+                  <strong className="text-cyan-300/80">{tAbout('section4.title')}</strong>
                 </h3>
                 <p className="mb-3">
-                  為避免演算法被武器化、反向濫用或誤解，<br />
-                  我們不公開完整數學式與參數。
+                  {tAbout('section4.p1')}
                 </p>
-                <p className="mb-3">但我們公開計算精神：</p>
+                <p className="mb-3">{tAbout('section4.p2')}</p>
                 <div className="space-y-3 mb-4">
                   <div>
                     <div className="text-cyan-300/70 font-light mb-1">
-                      ✔ <strong>技術倒數</strong>
+                      ✔ <strong>{tAbout('section4.techTitle')}</strong>
                     </div>
                     <p className="text-sm text-gray-400 ml-4">
-                      採用 <strong className="text-cyan-300/80">線性成長模型（Linear Growth Model）</strong><br />
-                      反映科技的可預期、累積進展。
+                      {tAbout('section4.techDesc')}
                     </p>
                   </div>
                   <div>
                     <div className="text-purple-300/70 font-light mb-1">
-                      ✔ <strong>文明倒數</strong>
+                      ✔ <strong>{tAbout('section4.civTitle')}</strong>
                     </div>
                     <p className="text-sm text-gray-400 ml-4">
-                      採用 <strong className="text-purple-300/80">S-Curve（S 型曲線）文明模型</strong><br />
-                      反映人類從「緩慢 → 加速 → 穩定」的自然成長特性。
+                      {tAbout('section4.civDesc')}
                     </p>
                   </div>
                 </div>
-                <p className="mb-3">此架構源自：</p>
+                <p className="mb-3">{tAbout('section4.p3')}</p>
                 <ul className="list-disc list-inside space-y-1 ml-4 mb-4 text-sm">
-                  <li>系統動力學（System Dynamics）</li>
-                  <li>技術採用率模型（Technology Adoption Curves）</li>
-                  <li>心理學與社會成熟研究（HCM）</li>
-                  <li>全球風險架構（IPCC / WHO / OECD）</li>
+                  <li>{tAbout('section4.source1')}</li>
+                  <li>{tAbout('section4.source2')}</li>
+                  <li>{tAbout('section4.source3')}</li>
+                  <li>{tAbout('section4.source4')}</li>
                 </ul>
                 <p className="text-cyan-300/60 italic">
-                  我們公開方向，<br />
-                  但不公開可逆向工程的機密演算法。
+                  {tAbout('section4.p4')}
                 </p>
               </div>
 
               {/* SECTION 5 - 風險差 */}
               <div className="border-t border-cyan-300/20 pt-6">
                 <h3 className="text-cyan-300/90 text-lg font-light mb-4">
-                  # 5. <strong className="text-cyan-300/80">風險差（Risk Delta）<br />
-                  Technology – Civilization</strong>
+                  <strong className="text-cyan-300/80">{tAbout('section5.title')}</strong>
                 </h3>
-                <p className="mb-3">風險差表示：</p>
+                <p className="mb-3">{tAbout('section5.p1')}</p>
                 <div className="p-4 bg-cyan-300/5 rounded-lg border border-cyan-300/10 mb-4">
                   <p className="text-cyan-300/80 font-light">
-                    <strong>科技進展速度</strong> 減去 <strong>文明成熟速度</strong>
+                    <strong>{tAbout('section5.highlight')}</strong>
                   </p>
                 </div>
-                <p className="mb-3">用來識別全球所處的風險級別：</p>
+                <p className="mb-3">{tAbout('section5.p2')}</p>
                 <div className="space-y-2 ml-4 mb-4">
                   <p>
-                    <strong className="text-red-300/80">Danger Zone（高風險期）</strong>：技術遠遠超前文明。
+                    <strong className="text-red-300/80">{tAbout('section5.danger')}</strong>
                   </p>
                   <p>
-                    <strong className="text-yellow-300/80">Tension Zone（緊張期）</strong>：兩者接近。
+                    <strong className="text-yellow-300/80">{tAbout('section5.tension')}</strong>
                   </p>
                   <p>
-                    <strong className="text-green-300/80">Safe Zone（安全期）</strong>：文明追上技術。
+                    <strong className="text-green-300/80">{tAbout('section5.safe')}</strong>
                   </p>
                 </div>
                 <p className="text-cyan-300/60 italic">
-                  Risk Delta 不是恐嚇，<br />
-                  而是文明需要的一項科學警示燈。
+                  {tAbout('section5.p3')}
                 </p>
               </div>
 
               {/* SECTION 6 - 全球共同體計畫 */}
               <div className="border-t border-cyan-300/20 pt-6">
                 <h3 className="text-cyan-300/90 text-lg font-light mb-4">
-                  # 6. <strong className="text-cyan-300/80">全球共同體計畫<br />
-                  Global Partner Initiative</strong>
+                  <strong className="text-cyan-300/80">{tAbout('section6.title')}</strong>
                 </h3>
                 <p className="mb-3">
-                  要建立一個真正可靠的超智能倒數系統，<br />
-                  單一國家或單一機構無法獨立完成。
+                  {tAbout('section6.p1')}
                 </p>
-                <p className="mb-3">準確的 ASI 監測，需要：</p>
+                <p className="mb-3">{tAbout('section6.p2')}</p>
                 <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
-                  <li><strong className="text-cyan-300/80">全球多源算力資料</strong></li>
-                  <li><strong className="text-cyan-300/80">跨文化的心理成熟度數據</strong></li>
-                  <li><strong className="text-cyan-300/80">國際政策與治理模型參與</strong></li>
-                  <li><strong className="text-cyan-300/80">大型研究機構的科學輸入</strong></li>
-                  <li><strong className="text-cyan-300/80">具影響力的媒體與敘事監測網絡</strong></li>
-                  <li><strong className="text-cyan-300/80">長期資源、人才與基金支持</strong></li>
+                  <li><strong className="text-cyan-300/80">{tAbout('section6.item1')}</strong></li>
+                  <li><strong className="text-cyan-300/80">{tAbout('section6.item2')}</strong></li>
+                  <li><strong className="text-cyan-300/80">{tAbout('section6.item3')}</strong></li>
+                  <li><strong className="text-cyan-300/80">{tAbout('section6.item4')}</strong></li>
+                  <li><strong className="text-cyan-300/80">{tAbout('section6.item5')}</strong></li>
+                  <li><strong className="text-cyan-300/80">{tAbout('section6.item6')}</strong></li>
                 </ul>
-                <p className="mb-3">因此，我們啟動 <strong className="text-cyan-300/80">全球共同體計畫</strong>：</p>
+                <p className="mb-3">{tAbout('section6.p3')}</p>
                 <div className="p-4 bg-cyan-300/5 rounded-lg border border-cyan-300/10 mb-4">
                   <p className="text-cyan-300/80 font-light">
-                    <strong>邀請研究者、工程師、教育者、政策制定者、<br />
-                    技術企業、國際組織與公益基金會<br />
-                    一起打造文明級的預測系統。</strong>
+                    <strong>{tAbout('section6.highlight')}</strong>
                   </p>
                 </div>
                 <p className="mb-3">
-                  越多人參與，<br />
-                  模型越強大，<br />
-                  倒數越精準，<br />
-                  文明越安全。
+                  {tAbout('section6.p4')}
                 </p>
               </div>
 
               {/* SECTION 7 - 這不只是科技計畫 */}
               <div className="border-t border-cyan-300/20 pt-6">
                 <h3 className="text-cyan-300/90 text-lg font-light mb-4">
-                  # 7. <strong className="text-cyan-300/80">這不只是科技計畫，而是文明工程</strong>
+                  <strong className="text-cyan-300/80">{tAbout('section7.title')}</strong>
                 </h3>
-                <p className="mb-3">我們建立這個儀表板，</p>
-                <p className="mb-3">不是為了預言未來，</p>
-                <p className="mb-4">而是為了讓世界做好準備。</p>
-                <p className="mb-3">因為：</p>
+                <p className="mb-3">{tAbout('section7.p1')}</p>
+                <p className="mb-3">{tAbout('section7.p2')}</p>
+                <p className="mb-4">{tAbout('section7.p3')}</p>
+                <p className="mb-3">{tAbout('section7.p4')}</p>
                 <div className="p-4 bg-cyan-300/5 rounded-lg border border-cyan-300/10 mb-4">
                   <p className="text-cyan-300/80 font-light">
-                    <strong>科技是推力，<br />
-                    文明是方向。</strong>
+                    <strong>{tAbout('section7.highlight')}</strong>
                   </p>
                 </div>
                 <p className="text-cyan-300/60 italic">
-                  ASI 的誕生不是命運，<br />
-                  而是人類集體的選擇。
+                  {tAbout('section7.p5')}
                 </p>
               </div>
 
               {/* SECTION 8 - 加入我們 */}
               <div className="border-t border-cyan-300/20 pt-6">
                 <h3 className="text-cyan-300/90 text-lg font-light mb-4">
-                  # 8. <strong className="text-cyan-300/80">加入我們<br />
-                  Join the Global Effort</strong>
+                  <strong className="text-cyan-300/80">{tAbout('section8.title')}</strong>
                 </h3>
-                <p className="mb-3">若你願意：</p>
+                <p className="mb-3">{tAbout('section8.p1')}</p>
                 <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
-                  <li>共享資料</li>
-                  <li>提供研究</li>
-                  <li>貢獻治理洞察</li>
-                  <li>支持資源</li>
-                  <li>或加入跨國合作</li>
+                  <li>{tAbout('section8.item1')}</li>
+                  <li>{tAbout('section8.item2')}</li>
+                  <li>{tAbout('section8.item3')}</li>
+                  <li>{tAbout('section8.item4')}</li>
+                  <li>{tAbout('section8.item5')}</li>
                 </ul>
                 <p className="mb-4">
-                  歡迎成為<br />
-                  <strong className="text-cyan-300/80">Final Countdown Global Partner Network</strong><br />
-                  的一份子。
+                  {tAbout('section8.p2')}
                 </p>
                 <div className="p-4 bg-cyan-300/5 rounded-lg border border-cyan-300/10 mb-4">
                   <p className="text-cyan-300/80 font-light text-center">
-                    超智能的倒數正在進行，<br />
-                    但我們仍然能共同塑造結果。
+                    {tAbout('section8.highlight')}
                   </p>
                 </div>
                 <div className="text-center mt-6 pt-6 border-t border-cyan-300/20">
                   <p className="text-cyan-300/90 text-xl font-light tracking-wide">
-                    Final Countdown for ASI
+                    {tAbout('section8.footer')}
                   </p>
                 </div>
               </div>

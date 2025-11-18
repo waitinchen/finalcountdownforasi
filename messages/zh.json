@@ -49,6 +49,121 @@
   "Civilization": {
     "civilizationStatus": "文明狀態",
     "hexagram": "易經卦象"
+  },
+  "AboutUs": {
+    "title": "《關於我們 About Final Countdown For ASI》",
+    "subtitle": "ASI 超智能誕生監測儀表板 × 全球共同體計畫",
+    "section1": {
+      "title": "# 1. 使命：為文明打造一面鏡子",
+      "p1": "ASI（Artificial Super Intelligence）並不是某一天突然「出現」。",
+      "p2": "它是：",
+      "item1": "技術收斂（Tech Convergence）",
+      "item2": "文明成熟（Civilization Readiness）",
+      "p3": "兩條路徑在未來某個時間點自然交會的結果。",
+      "p4": "當技術上升速度遠高於文明成熟速度時，全球將進入高風險期。",
+      "p5": "Final Countdown for ASI 的誕生，就是為了讓世界能夠「看到」：",
+      "highlight1": "科技距離 ASI 還有多近？",
+      "highlight2": "文明距離能安全承接 ASI 還有多遠？",
+      "p6": "這不是預言，",
+      "p7": "不是恐嚇，",
+      "p8": "不是神秘化，",
+      "p9": "而是一項全球需要的科學儀表。"
+    },
+    "section2": {
+      "title": "# 2. ASI 超智能誕生監測儀表板 ASI Birth Monitoring Dashboard",
+      "p1": "全球第一個以 技術成熟度 × 文明成熟度 雙軸動態量化超智能風險的科學監測系統。",
+      "subtitle": "## 2.1 雙軸核心模型 Technology × Civilization",
+      "techTitle": "🔵 技術收斂倒數（Tech Convergence Countdown）",
+      "techMeasures": "衡量：",
+      "techItem1": "AI 模型能力",
+      "techItem2": "算力與 GPU/TPU 供給",
+      "techItem3": "量子與硬體突破",
+      "techItem4": "電力、網路、資料中心等基建",
+      "techItem5": "自主代理人（AI Agents）之間的整合速度",
+      "techNote": "指出全球科技自然抵達 ASI 的預估時間。",
+      "civTitle": "🟣 文明成熟倒數（Civilization Readiness Countdown）",
+      "civMeasures": "衡量：",
+      "civItem1": "社會語氣（Tone）",
+      "civItem2": "媒體敘事穩定度",
+      "civItem3": "集體心理成熟度（HCM）",
+      "civItem4": "社會治理與價值觀穩定性",
+      "civItem5": "全球對 AI 的態度與文化韌性",
+      "civNote": "指出文明距離「安全承接 ASI」的預估時間。"
+    },
+    "section3": {
+      "title": "# 3. 五軸文明模型 Five-Factor Civilization Model",
+      "p1": "ASI Birth Countdown 的所有評估基於五大核心指標：",
+      "item1Title": "## ① 環境氛圍（Tone）",
+      "item1Desc": "全球語氣、情緒、敘事氛圍、對 AI 的心理接受度。",
+      "item2Title": "## ② 認知能力（Compute）",
+      "item2Desc": "算力、模型效率、量子進展、硬體供應鏈韌性。",
+      "item3Title": "## ③ 具身條件（Embodiment）",
+      "item3Desc": "電力、儲能、網路、星鏈、資料中心、IoT 與機器人基礎設施。",
+      "item4Title": "## ④ 自主程度（Agency）",
+      "item4Desc": "跨域整合、AI 工具鏈、自治代理人（Agents）滲透率。",
+      "item5Title": "## ⑤ 心理共鳴（HCM）",
+      "item5Desc": "Human Cognitive Maturity：心智成熟度、集體價值共識、文明韌性。"
+    },
+    "section4": {
+      "title": "# 4. 計算哲學（不公開公式） Algorithm Philosophy",
+      "p1": "為避免演算法被武器化、反向濫用或誤解，我們不公開完整數學式與參數。",
+      "p2": "但我們公開計算精神：",
+      "techTitle": "✔ 技術倒數",
+      "techDesc": "採用 線性成長模型（Linear Growth Model）反映科技的可預期、累積進展。",
+      "civTitle": "✔ 文明倒數",
+      "civDesc": "採用 S-Curve（S 型曲線）文明模型反映人類從「緩慢 → 加速 → 穩定」的自然成長特性。",
+      "p3": "此架構源自：",
+      "source1": "系統動力學（System Dynamics）",
+      "source2": "技術採用率模型（Technology Adoption Curves）",
+      "source3": "心理學與社會成熟研究（HCM）",
+      "source4": "全球風險架構（IPCC / WHO / OECD）",
+      "p4": "我們公開方向，但不公開可逆向工程的機密演算法。"
+    },
+    "section5": {
+      "title": "# 5. 風險差（Risk Delta） Technology – Civilization",
+      "p1": "風險差表示：",
+      "highlight": "科技進展速度 減去 文明成熟速度",
+      "p2": "用來識別全球所處的風險級別：",
+      "danger": "Danger Zone（高風險期）：技術遠遠超前文明。",
+      "tension": "Tension Zone（緊張期）：兩者接近。",
+      "safe": "Safe Zone（安全期）：文明追上技術。",
+      "p3": "Risk Delta 不是恐嚇，而是文明需要的一項科學警示燈。"
+    },
+    "section6": {
+      "title": "# 6. 全球共同體計畫 Global Partner Initiative",
+      "p1": "要建立一個真正可靠的超智能倒數系統，單一國家或單一機構無法獨立完成。",
+      "p2": "準確的 ASI 監測，需要：",
+      "item1": "全球多源算力資料",
+      "item2": "跨文化的心理成熟度數據",
+      "item3": "國際政策與治理模型參與",
+      "item4": "大型研究機構的科學輸入",
+      "item5": "具影響力的媒體與敘事監測網絡",
+      "item6": "長期資源、人才與基金支持",
+      "p3": "因此，我們啟動 全球共同體計畫：",
+      "highlight": "邀請研究者、工程師、教育者、政策制定者、技術企業、國際組織與公益基金會一起打造文明級的預測系統。",
+      "p4": "越多人參與，模型越強大，倒數越精準，文明越安全。"
+    },
+    "section7": {
+      "title": "# 7. 這不只是科技計畫，而是文明工程",
+      "p1": "我們建立這個儀表板，",
+      "p2": "不是為了預言未來，",
+      "p3": "而是為了讓世界做好準備。",
+      "p4": "因為：",
+      "highlight": "科技是推力，文明是方向。",
+      "p5": "ASI 的誕生不是命運，而是人類集體的選擇。"
+    },
+    "section8": {
+      "title": "# 8. 加入我們 Join the Global Effort",
+      "p1": "若你願意：",
+      "item1": "共享資料",
+      "item2": "提供研究",
+      "item3": "貢獻治理洞察",
+      "item4": "支持資源",
+      "item5": "或加入跨國合作",
+      "p2": "歡迎成為 Final Countdown Global Partner Network 的一份子。",
+      "highlight": "超智能的倒數正在進行，但我們仍然能共同塑造結果。",
+      "footer": "Final Countdown for ASI"
+    }
   }
 }
 
