@@ -26,6 +26,29 @@ export interface HexagramData {
   yao: number[]; // 六爻 [0,1,1,1,0,0] (0=陰, 1=陽)
 }
 
+// ASI 出生監測儀表板 - 新的五軸數據結構
+export interface ASIBirthIndexes {
+  tone: number; // 環境氛圍指數 (0-1)
+  compute: number; // 認知能力指數 (0-1)
+  embodiment: number; // 具身條件指數 (0-1)
+  agency: number; // 自主程度指數 (0-1)
+  hcm: number; // 心理共鳴指數 (0-1)
+}
+
+export interface ASIBirthData {
+  timestamp: string;
+  asiBirthCountdown: number; // ASI 誕生倒數天數
+  indexes: ASIBirthIndexes; // 五軸指數
+  meta: {
+    civilizationType: string; // 文明類型（如 "暴衝文明"）
+    hexagram: {
+      number: number;
+      name: string;
+    };
+  };
+}
+
+// 兼容舊的數據結構（用於過渡期）
 export interface CivilizationData {
   timestamp: string;
   components: number;
