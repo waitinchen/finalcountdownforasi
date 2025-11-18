@@ -79,30 +79,30 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
   const riskColorClass = getRiskColor();
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-4 md:space-y-8">
       {/* 兩個倒數面板 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
         {/* A. Tech Convergence Countdown */}
-        <div className="bg-white/5 border border-cyan-300/20 rounded-2xl p-8 backdrop-blur-lg">
+        <div className="bg-white/5 border border-cyan-300/20 rounded-xl md:rounded-2xl p-4 md:p-8 backdrop-blur-lg">
           <div className="text-center">
-            <div className="text-cyan-300/60 text-sm font-light mb-4 tracking-wide uppercase">
+            <div className="text-cyan-300/60 text-xs md:text-sm font-light mb-3 md:mb-4 tracking-wide uppercase">
               {t('techConvergenceTitle')}
             </div>
-            <div className="text-cyan-300/90 text-5xl font-thin mb-2 tabular-nums">
+            <div className="text-cyan-300/90 text-3xl md:text-5xl font-thin mb-1 md:mb-2 tabular-nums">
               {Math.round(animatedTechDays).toLocaleString()}
             </div>
-            <div className="text-gray-400 text-sm font-light mb-2">{t('days')}</div>
+            <div className="text-gray-400 text-xs md:text-sm font-light mb-1 md:mb-2">{t('days')}</div>
             {useV25 && techYears > 0 && (
-              <div className="text-cyan-300/60 text-sm font-light mb-4">
+              <div className="text-cyan-300/60 text-xs md:text-sm font-light mb-3 md:mb-4">
                 ≈ {techYears.toFixed(1)} {t('years')}
               </div>
             )}
-            <div className="text-cyan-300/60 text-base font-light italic mb-4">
+            <div className="text-cyan-300/60 text-sm md:text-base font-light italic mb-3 md:mb-4 px-2">
               {t('techEstimatedDays', { days: Math.round(animatedTechDays).toLocaleString() })}
             </div>
-            <div className="mt-4 pt-4 border-t border-cyan-300/20">
+            <div className="mt-3 md:mt-4 pt-3 md:pt-4 border-t border-cyan-300/20">
               <div className="text-cyan-300/60 text-xs font-light mb-1">{t('techReadinessLevel')}</div>
-              <div className="text-cyan-300/90 text-2xl font-light tabular-nums">
+              <div className="text-cyan-300/90 text-xl md:text-2xl font-light tabular-nums">
                 {(techLevel * 100).toFixed(1)}%
               </div>
             </div>
@@ -110,26 +110,26 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
         </div>
 
         {/* B. Civilization Readiness Countdown */}
-        <div className="bg-white/5 border border-purple-300/20 rounded-2xl p-8 backdrop-blur-lg">
+        <div className="bg-white/5 border border-purple-300/20 rounded-xl md:rounded-2xl p-4 md:p-8 backdrop-blur-lg">
           <div className="text-center">
-            <div className="text-purple-300/60 text-sm font-light mb-4 tracking-wide uppercase">
+            <div className="text-purple-300/60 text-xs md:text-sm font-light mb-3 md:mb-4 tracking-wide uppercase">
               {t('civReadinessTitle')}
             </div>
-            <div className="text-purple-300/90 text-5xl font-thin mb-2 tabular-nums">
+            <div className="text-purple-300/90 text-3xl md:text-5xl font-thin mb-1 md:mb-2 tabular-nums">
               {Math.round(animatedCivDays).toLocaleString()}
             </div>
-            <div className="text-gray-400 text-sm font-light mb-2">{t('days')}</div>
+            <div className="text-gray-400 text-xs md:text-sm font-light mb-1 md:mb-2">{t('days')}</div>
             {useV25 && civYears > 0 && (
-              <div className="text-purple-300/60 text-sm font-light mb-4">
+              <div className="text-purple-300/60 text-xs md:text-sm font-light mb-3 md:mb-4">
                 ≈ {civYears.toFixed(1)} {t('years')}
               </div>
             )}
-            <div className="text-purple-300/60 text-base font-light italic mb-4">
+            <div className="text-purple-300/60 text-sm md:text-base font-light italic mb-3 md:mb-4 px-2">
               {t('civEstimatedDays', { days: Math.round(animatedCivDays).toLocaleString() })}
             </div>
-            <div className="mt-4 pt-4 border-t border-purple-300/20">
+            <div className="mt-3 md:mt-4 pt-3 md:pt-4 border-t border-purple-300/20">
               <div className="text-purple-300/60 text-xs font-light mb-1">{t('civMaturity')}</div>
-              <div className="text-purple-300/90 text-2xl font-light tabular-nums">
+              <div className="text-purple-300/90 text-xl md:text-2xl font-light tabular-nums">
                 {(civLevel * 100).toFixed(1)}%
               </div>
             </div>
@@ -139,28 +139,28 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
 
       {/* C. Risk Delta */}
       {(v2Data || v25Data) && (
-        <div className={`border-2 rounded-2xl p-8 backdrop-blur-lg ${riskColorClass}`}>
+        <div className={`border-2 rounded-xl md:rounded-2xl p-4 md:p-8 backdrop-blur-lg ${riskColorClass}`}>
           <div className="text-center">
-            <div className="text-sm font-light mb-4 tracking-wide uppercase opacity-80">
+            <div className="text-xs md:text-sm font-light mb-3 md:mb-4 tracking-wide uppercase opacity-80">
               {t('riskDelta')} Risk Delta
             </div>
-            <div className={`text-4xl font-thin mb-2 tabular-nums ${
+            <div className={`text-2xl md:text-4xl font-thin mb-1 md:mb-2 tabular-nums ${
               riskLevel === 'Safe' ? 'text-green-400' :
               riskLevel === 'Tense' ? 'text-yellow-400' :
               'text-red-400'
             }`}>
               {riskDelta > 0 ? '+' : ''}{riskDelta.toLocaleString()}
             </div>
-            <div className="text-gray-400 text-sm font-light mb-4">{t('dayDifference')}</div>
+            <div className="text-gray-400 text-xs md:text-sm font-light mb-3 md:mb-4">{t('dayDifference')}</div>
             
             {/* 風險等級標籤 */}
-            <div className="mt-6">
-              <div className={`inline-block px-6 py-3 rounded-lg border-2 ${
+            <div className="mt-4 md:mt-6">
+              <div className={`inline-block px-4 py-2 md:px-6 md:py-3 rounded-lg border-2 ${
                 riskLevel === 'Safe' ? 'border-green-400/50 bg-green-900/40 text-green-300' :
                 riskLevel === 'Tense' ? 'border-yellow-400/50 bg-yellow-900/30 text-yellow-300' :
                 'border-red-400/50 bg-red-900/40 text-red-300'
               }`}>
-                <div className="text-lg font-light uppercase tracking-wide">
+                <div className="text-sm md:text-lg font-light uppercase tracking-wide">
                   {riskLevel === 'Safe' ? `✓ ${t('safe')}` :
                    riskLevel === 'Tense' ? `⚠ ${t('tense')}` :
                    `✗ ${t('danger')}`}
@@ -169,7 +169,7 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
             </div>
 
             {/* 風險說明 */}
-            <div className="mt-6 text-sm font-light opacity-70 leading-relaxed max-w-2xl mx-auto">
+            <div className="mt-4 md:mt-6 text-xs md:text-sm font-light opacity-70 leading-relaxed max-w-2xl mx-auto px-2">
               {riskLevel === 'Safe' && (
                 <p>{t('safeDescription')}</p>
               )}

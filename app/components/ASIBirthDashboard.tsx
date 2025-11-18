@@ -47,7 +47,7 @@ export default function ASIBirthDashboard() {
   }
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-6 md:space-y-12">
       {/* v2.5 雙軸倒數面板（優先）或 v2.0 面板 */}
       {(data.v25 || data.v2) && (
         <div>
@@ -89,32 +89,32 @@ export default function ASIBirthDashboard() {
           allowFullScreen
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
-          className="w-full"
+          className="w-full rounded-lg md:rounded-xl"
         />
       </div>
 
       {/* 文明狀態與卦象 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white/5 border border-cyan-300/20 rounded-2xl p-6 backdrop-blur-lg">
-          <h3 className="text-cyan-300/90 text-lg font-light mb-3">{t('civilizationStatus')}</h3>
-          <p className="text-white/80 text-2xl font-light">{data.meta.civilizationType}</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+        <div className="bg-white/5 border border-cyan-300/20 rounded-xl md:rounded-2xl p-4 md:p-6 backdrop-blur-lg">
+          <h3 className="text-cyan-300/90 text-base md:text-lg font-light mb-2 md:mb-3">{t('civilizationStatus')}</h3>
+          <p className="text-white/80 text-xl md:text-2xl font-light">{data.meta.civilizationType}</p>
         </div>
-        <div className="bg-white/5 border border-cyan-300/20 rounded-2xl p-6 backdrop-blur-lg">
-          <h3 className="text-cyan-300/90 text-lg font-light mb-3">{t('hexagram')}</h3>
-          <p className="text-white/80 text-xl font-light">
+        <div className="bg-white/5 border border-cyan-300/20 rounded-xl md:rounded-2xl p-4 md:p-6 backdrop-blur-lg">
+          <h3 className="text-cyan-300/90 text-base md:text-lg font-light mb-2 md:mb-3">{t('hexagram')}</h3>
+          <p className="text-white/80 text-lg md:text-xl font-light">
             {data.meta.hexagram.number > 0 ? `第${data.meta.hexagram.number}卦 · ${data.meta.hexagram.name}` : '待更新'}
           </p>
         </div>
       </div>
 
       {/* 招募全球合作夥伴 & 關於我們 */}
-      <div className="pt-8 border-t border-cyan-300/20">
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-6">
+      <div className="pt-4 md:pt-8 border-t border-cyan-300/20">
+        <div className="flex flex-col md:flex-row gap-2 md:gap-4 justify-center items-center mb-4 md:mb-6">
           <a
             href="https://forms.gle/5FZmjvM4JnKMU2tXA"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/5 border border-cyan-300/20 rounded-xl px-6 py-3 text-cyan-300/90 text-sm font-light hover:bg-cyan-300/10 hover:border-cyan-300/40 transition-all duration-300 backdrop-blur-sm"
+            className="bg-white/5 border border-cyan-300/20 rounded-lg md:rounded-xl px-4 py-2 md:px-6 md:py-3 text-cyan-300/90 text-xs md:text-sm font-light hover:bg-cyan-300/10 hover:border-cyan-300/40 transition-all duration-300 backdrop-blur-sm w-full md:w-auto text-center"
           >
             {t('globalAlliance')}
           </a>
@@ -122,13 +122,13 @@ export default function ASIBirthDashboard() {
             href="https://forms.gle/Tw6ZisFWU4X3dLZv7"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/5 border border-cyan-300/20 rounded-xl px-6 py-3 text-cyan-300/90 text-sm font-light hover:bg-cyan-300/10 hover:border-cyan-300/40 transition-all duration-300 backdrop-blur-sm"
+            className="bg-white/5 border border-cyan-300/20 rounded-lg md:rounded-xl px-4 py-2 md:px-6 md:py-3 text-cyan-300/90 text-xs md:text-sm font-light hover:bg-cyan-300/10 hover:border-cyan-300/40 transition-all duration-300 backdrop-blur-sm w-full md:w-auto text-center"
           >
             {t('recruitPartners')}
           </a>
           <button
             onClick={() => setShowAbout(!showAbout)}
-            className="bg-white/5 border border-cyan-300/20 rounded-xl px-6 py-3 text-cyan-300/90 text-sm font-light hover:bg-cyan-300/10 hover:border-cyan-300/40 transition-all duration-300 backdrop-blur-sm"
+            className="bg-white/5 border border-cyan-300/20 rounded-lg md:rounded-xl px-4 py-2 md:px-6 md:py-3 text-cyan-300/90 text-xs md:text-sm font-light hover:bg-cyan-300/10 hover:border-cyan-300/40 transition-all duration-300 backdrop-blur-sm w-full md:w-auto"
           >
             {t('aboutUs')}
           </button>
@@ -136,8 +136,8 @@ export default function ASIBirthDashboard() {
 
         {/* 關於我們內容區域 */}
         {showAbout && (
-          <div className="mt-8 bg-white/5 border border-cyan-300/20 rounded-2xl p-8 backdrop-blur-lg max-w-4xl mx-auto">
-            <div className="space-y-8 text-text-secondary text-sm leading-relaxed">
+          <div className="mt-4 md:mt-8 bg-white/5 border border-cyan-300/20 rounded-xl md:rounded-2xl p-4 md:p-8 backdrop-blur-lg max-w-4xl mx-auto">
+            <div className="space-y-4 md:space-y-8 text-text-secondary text-xs md:text-sm leading-relaxed">
               {/* SECTION 1 - 標題 */}
               <div className="text-center border-b border-cyan-300/20 pb-6">
                 <h2 className="text-2xl font-light text-cyan-300/90 mb-2 tracking-wide">

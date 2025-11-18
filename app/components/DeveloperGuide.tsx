@@ -6,15 +6,15 @@ export default function DeveloperGuide() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-3 right-3 md:bottom-6 md:right-6 z-50">
       {/* 展開/收起按鈕 */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="mb-4 w-14 h-14 bg-white/5 border border-cyan-300/30 rounded-full flex items-center justify-center backdrop-blur-lg hover:bg-white/10 hover:border-cyan-300/50 transition-all duration-300 group shadow-lg shadow-cyan-300/20 active:scale-95"
+        className="mb-2 md:mb-4 w-12 h-12 md:w-14 md:h-14 bg-white/5 border border-cyan-300/30 rounded-full flex items-center justify-center backdrop-blur-lg hover:bg-white/10 hover:border-cyan-300/50 transition-all duration-300 group shadow-lg shadow-cyan-300/20 active:scale-95"
         aria-label={isOpen ? '收起白皮書' : '展開白皮書'}
       >
         <svg
-          className={`w-6 h-6 text-cyan-300/80 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-5 h-5 md:w-6 md:h-6 text-cyan-300/80 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -25,17 +25,17 @@ export default function DeveloperGuide() {
 
       {/* 白皮書面板 */}
       {isOpen && (
-        <div className="w-[600px] max-w-[calc(100vw-3rem)] max-h-[85vh] bg-white/5 border border-cyan-300/20 rounded-2xl backdrop-blur-lg shadow-2xl shadow-black/50 overflow-hidden flex flex-col">
+        <div className="w-[calc(100vw-1.5rem)] md:w-[600px] max-h-[85vh] bg-white/5 border border-cyan-300/20 rounded-xl md:rounded-2xl backdrop-blur-lg shadow-2xl shadow-black/50 overflow-hidden flex flex-col">
           {/* 標題欄 */}
-          <div className="px-6 py-4 border-b border-cyan-300/20 bg-white/5">
-            <h3 className="text-xl font-light text-cyan-300/90 tracking-wide">
+          <div className="px-4 md:px-6 py-3 md:py-4 border-b border-cyan-300/20 bg-white/5">
+            <h3 className="text-lg md:text-xl font-light text-cyan-300/90 tracking-wide">
               《ASI Birth Countdown v1.0》
             </h3>
             <p className="text-gray-400 text-xs mt-1">五軸文明成熟度模型白皮書</p>
           </div>
 
           {/* 內容區域 */}
-          <div className="flex-1 overflow-y-auto px-6 py-5 space-y-6 custom-scrollbar">
+          <div className="flex-1 overflow-y-auto px-4 md:px-6 py-4 md:py-5 space-y-4 md:space-y-6 custom-scrollbar">
             {/* 摘要 */}
             <section>
               <h4 className="text-cyan-300/90 text-base font-medium mb-3 tracking-wide">摘要（Abstract）</h4>

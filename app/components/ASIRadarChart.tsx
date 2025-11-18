@@ -107,20 +107,20 @@ export default function ASIRadarChart({ indexes }: ASIRadarChartProps) {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       <div className="text-center">
-        <h2 className="text-2xl font-light text-cyan-300/90 mb-2 tracking-wide">
+        <h2 className="text-xl md:text-2xl font-light text-cyan-300/90 mb-1 md:mb-2 tracking-wide">
           {t('title')}
         </h2>
-        <p className="text-gray-400 text-sm">{t('subtitle')}</p>
+        <p className="text-gray-400 text-xs md:text-sm">{t('subtitle')}</p>
       </div>
       <div className="flex justify-center">
-        <div className="bg-white/5 border border-cyan-300/20 rounded-3xl p-8 backdrop-blur-lg">
+        <div className="bg-white/5 border border-cyan-300/20 rounded-2xl md:rounded-3xl p-4 md:p-8 backdrop-blur-lg">
           <svg
           width="500"
           height="500"
           viewBox="0 0 500 500"
-          className="max-w-full"
+          className="max-w-full h-auto"
         >
           {gridCircles}
           {axes}

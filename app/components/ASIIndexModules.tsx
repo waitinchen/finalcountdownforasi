@@ -46,7 +46,7 @@ const MODULE_INFO = {
 
 export default function ASIIndexModules({ indexes }: ASIIndexModulesProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6">
       {(Object.keys(indexes) as Array<keyof ASIBirthIndexes>).map((key) => {
         const value = indexes[key];
         const percent = value * 100;
@@ -57,15 +57,15 @@ export default function ASIIndexModules({ indexes }: ASIIndexModulesProps) {
         return (
           <div
             key={key}
-            className="bg-white/5 border border-cyan-300/20 rounded-2xl p-6 backdrop-blur-lg hover:bg-white/8 transition-all duration-300"
+            className="bg-white/5 border border-cyan-300/20 rounded-xl md:rounded-2xl p-3 md:p-6 backdrop-blur-lg hover:bg-white/8 transition-all duration-300"
           >
-            <div className="text-center mb-4">
+            <div className="text-center mb-2 md:mb-4">
               <div className="text-gray-400 text-xs font-light mb-1">{info.label}</div>
-              <div className="text-cyan-300/80 text-sm font-light mb-2">{info.labelZh}</div>
+              <div className="text-cyan-300/80 text-xs md:text-sm font-light mb-1 md:mb-2">{info.labelZh}</div>
             </div>
 
             {/* 圓形進度條 */}
-            <div className="relative w-32 h-32 mx-auto mb-4">
+            <div className="relative w-20 h-20 md:w-32 md:h-32 mx-auto mb-2 md:mb-4">
               <svg className="transform -rotate-90" viewBox="0 0 100 100">
                 <circle
                   cx="50"
@@ -93,7 +93,7 @@ export default function ASIIndexModules({ indexes }: ASIIndexModulesProps) {
               </svg>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-white/90 text-2xl font-light tabular-nums">
+                  <div className="text-white/90 text-base md:text-2xl font-light tabular-nums">
                     {percent.toFixed(1)}%
                   </div>
                 </div>
@@ -106,7 +106,7 @@ export default function ASIIndexModules({ indexes }: ASIIndexModulesProps) {
             </div>
 
             {/* 呼吸動畫指示器 */}
-            <div className="mt-4 flex justify-center">
+            <div className="mt-2 md:mt-4 flex justify-center">
               <div
                 className="w-2 h-2 rounded-full"
                 style={{
