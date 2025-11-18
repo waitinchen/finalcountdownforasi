@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { CivilizationData } from '@/lib/types';
 import { fetchCivilizationData } from '@/lib/api';
+import { calculateCivilizationFromData } from '@/lib/civilizationCalculator';
 import CivilizationBanner from './CivilizationBanner';
 import TechHeartBalance from './TechHeartBalance';
 import DomainRadarNew from './DomainRadarNew';
@@ -41,11 +42,14 @@ export default function DashboardNew() {
     );
   }
 
+  // 根據數據計算文明狀態（覆蓋後端返回的值）
+  const calculatedCivilization = calculateCivilizationFromData(data);
+
   return (
     <div className="space-y-8">
       {/* ① 文明類型 Banner */}
       <div>
-        <CivilizationBanner civilization={data.civilization} />
+        <CivilizationBanner civilization={calculatedCivilization} />
       </div>
 
       {/* ② 心與術平衡儀 + 五維雷達圖 */}
