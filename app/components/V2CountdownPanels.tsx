@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { V2CountdownData, V25CountdownData } from '@/lib/types';
 
 interface V2CountdownPanelsProps {
@@ -9,6 +10,7 @@ interface V2CountdownPanelsProps {
 }
 
 export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanelsProps) {
+  const t = useTranslations('Dashboard');
   // 優先使用 v2.5 數據，否則使用 v2.0 數據
   const useV25 = !!v25Data;
   
@@ -84,22 +86,22 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
         <div className="bg-white/5 border border-cyan-300/20 rounded-2xl p-8 backdrop-blur-lg">
           <div className="text-center">
             <div className="text-cyan-300/60 text-sm font-light mb-4 tracking-wide uppercase">
-              技術達標 Tech Convergence Countdown
+              {t('techConvergenceTitle')}
             </div>
             <div className="text-cyan-300/90 text-5xl font-thin mb-2 tabular-nums">
-              {Math.round(animatedTechDays).toLocaleString('zh-TW')}
+              {Math.round(animatedTechDays).toLocaleString()}
             </div>
-            <div className="text-gray-400 text-sm font-light mb-2">天</div>
+            <div className="text-gray-400 text-sm font-light mb-2">{t('days')}</div>
             {useV25 && techYears > 0 && (
               <div className="text-cyan-300/60 text-sm font-light mb-4">
-                ≈ {techYears.toFixed(1)} 年
+                ≈ {techYears.toFixed(1)} {t('years')}
               </div>
             )}
             <div className="text-cyan-300/60 text-base font-light italic mb-4">
-              技術預估在 {Math.round(animatedTechDays).toLocaleString('zh-TW')} 天後自然達成
+              {t('techEstimatedDays', { days: Math.round(animatedTechDays).toLocaleString() })}
             </div>
             <div className="mt-4 pt-4 border-t border-cyan-300/20">
-              <div className="text-cyan-300/60 text-xs font-light mb-1">Tech Readiness Level</div>
+              <div className="text-cyan-300/60 text-xs font-light mb-1">{t('techReadinessLevel')}</div>
               <div className="text-cyan-300/90 text-2xl font-light tabular-nums">
                 {(techLevel * 100).toFixed(1)}%
               </div>
@@ -111,22 +113,22 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
         <div className="bg-white/5 border border-purple-300/20 rounded-2xl p-8 backdrop-blur-lg">
           <div className="text-center">
             <div className="text-purple-300/60 text-sm font-light mb-4 tracking-wide uppercase">
-              安全達標 Civilization Readiness Countdown
+              {t('civReadinessTitle')}
             </div>
             <div className="text-purple-300/90 text-5xl font-thin mb-2 tabular-nums">
-              {Math.round(animatedCivDays).toLocaleString('zh-TW')}
+              {Math.round(animatedCivDays).toLocaleString()}
             </div>
-            <div className="text-gray-400 text-sm font-light mb-2">天</div>
+            <div className="text-gray-400 text-sm font-light mb-2">{t('days')}</div>
             {useV25 && civYears > 0 && (
               <div className="text-purple-300/60 text-sm font-light mb-4">
-                ≈ {civYears.toFixed(1)} 年
+                ≈ {civYears.toFixed(1)} {t('years')}
               </div>
             )}
             <div className="text-purple-300/60 text-base font-light italic mb-4">
-              文明預估需要 {Math.round(animatedCivDays).toLocaleString('zh-TW')} 天才能安全承接 ASI
+              {t('civEstimatedDays', { days: Math.round(animatedCivDays).toLocaleString() })}
             </div>
             <div className="mt-4 pt-4 border-t border-purple-300/20">
-              <div className="text-purple-300/60 text-xs font-light mb-1">Civilization Maturity</div>
+              <div className="text-purple-300/60 text-xs font-light mb-1">{t('civMaturity')}</div>
               <div className="text-purple-300/90 text-2xl font-light tabular-nums">
                 {(civLevel * 100).toFixed(1)}%
               </div>
@@ -140,16 +142,16 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
         <div className={`border-2 rounded-2xl p-8 backdrop-blur-lg ${riskColorClass}`}>
           <div className="text-center">
             <div className="text-sm font-light mb-4 tracking-wide uppercase opacity-80">
-              偏差 Risk Delta
+              {t('riskDelta')} Risk Delta
             </div>
             <div className={`text-4xl font-thin mb-2 tabular-nums ${
               riskLevel === 'Safe' ? 'text-green-400' :
               riskLevel === 'Tense' ? 'text-yellow-400' :
               'text-red-400'
             }`}>
-              {riskDelta > 0 ? '+' : ''}{riskDelta.toLocaleString('zh-TW')}
+              {riskDelta > 0 ? '+' : ''}{riskDelta.toLocaleString()}
             </div>
-            <div className="text-gray-400 text-sm font-light mb-4">天差距</div>
+            <div className="text-gray-400 text-sm font-light mb-4">{t('dayDifference')}</div>
             
             {/* 風險等級標籤 */}
             <div className="mt-6">
@@ -159,9 +161,9 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
                 'border-red-400/50 bg-red-900/40 text-red-300'
               }`}>
                 <div className="text-lg font-light uppercase tracking-wide">
-                  {riskLevel === 'Safe' ? '✓ 安全' :
-                   riskLevel === 'Tense' ? '⚠ 緊張' :
-                   '✗ 危險'}
+                  {riskLevel === 'Safe' ? `✓ ${t('safe')}` :
+                   riskLevel === 'Tense' ? `⚠ ${t('tense')}` :
+                   `✗ ${t('danger')}`}
                 </div>
               </div>
             </div>
@@ -169,13 +171,13 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
             {/* 風險說明 */}
             <div className="mt-6 text-sm font-light opacity-70 leading-relaxed max-w-2xl mx-auto">
               {riskLevel === 'Safe' && (
-                <p>文明跑在技術前面，具備安全緩衝期</p>
+                <p>{t('safeDescription')}</p>
               )}
               {riskLevel === 'Tense' && (
-                <p>技術與文明接近交會期，需要密切監測</p>
+                <p>{t('tenseDescription')}</p>
               )}
               {riskLevel === 'Crash' && (
-                <p>技術超前文明太多，存在高風險</p>
+                <p>{t('dangerDescription')}</p>
               )}
             </div>
 

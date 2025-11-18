@@ -1,9 +1,14 @@
-import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
-import Script from 'next/script'
-import '../styles/globals.css'
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
+import {setRequestLocale} from 'next-intl/server';
+import {ReactNode} from 'react';
+import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
+import Script from 'next/script';
+import '../../styles/globals.css';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Final Countdown for ASI',
@@ -12,21 +17,31 @@ export const metadata: Metadata = {
   authors: [{ name: 'MiniMax Agent' }],
   creator: 'MiniMax Agent',
   publisher: 'MiniMax Agent',
-}
+};
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: '#0a0e27',
+};
+
+export function generateStaticParams() {
+  return ['en', 'zh', 'ja', 'ko', 'es'].map((locale) => ({locale}));
 }
 
-export default function RootLayout({
+export default async function LocaleLayout({
   children,
+  params
 }: {
-  children: React.ReactNode
+  children: ReactNode;
+  params: Promise<{locale: string}>;
 }) {
+  const {locale} = await params;
+  setRequestLocale(locale);
+  const messages = await getMessages();
+
   return (
-    <html lang="zh-TW">
+    <html lang={locale}>
       <body className={inter.className}>
         {/* Google Analytics */}
         <Script
@@ -42,7 +57,10 @@ export default function RootLayout({
           `}
         </Script>
         <div className="min-h-screen bg-space-gradient relative">
-          {children}
+          <NextIntlClientProvider messages={messages}>
+            <LanguageSwitcher />
+            {children}
+          </NextIntlClientProvider>
         </div>
         
         {/* ElevenLabs ConvAI 客服對話 */}
@@ -53,5 +71,6 @@ export default function RootLayout({
         />
       </body>
     </html>
-  )
+  );
 }
+

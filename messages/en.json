@@ -1,0 +1,54 @@
+{
+  "Dashboard": {
+    "title": "ASI Birth Monitoring Dashboard",
+    "subtitle": "ASI Birth Monitoring Dashboard",
+    "techCountdown": "Tech Convergence Countdown",
+    "civCountdown": "Civilization Readiness Countdown",
+    "riskDelta": "Risk Delta",
+    "toneStability": "Tone Stability Index",
+    "compute": "Compute Readiness",
+    "embodiment": "Embodiment Readiness",
+    "agency": "Agency Emergence",
+    "hcm": "Human Cognitive Maturity",
+    "techConvergenceTitle": "Tech Convergence Countdown",
+    "civReadinessTitle": "Civilization Readiness Countdown",
+    "techEstimatedDays": "Technology is estimated to naturally achieve convergence in {days} days",
+    "civEstimatedDays": "Civilization is estimated to need {days} days to safely accommodate ASI",
+    "techReadinessLevel": "Tech Readiness Level",
+    "civMaturity": "Civilization Maturity",
+    "days": "days",
+    "years": "years",
+    "dayDifference": "day difference",
+    "safe": "Safe",
+    "tense": "Tense",
+    "danger": "Danger",
+    "safeDescription": "Civilization is ahead of technology, with a safe buffer period",
+    "tenseDescription": "Technology and civilization are approaching convergence, requiring close monitoring",
+    "dangerDescription": "Technology is too far ahead of civilization, there is high risk",
+    "aboutUs": "About Us",
+    "recruitPartners": "Recruit Global Partners",
+    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity"
+  },
+  "Radar": {
+    "title": "ASI Developmental Readiness",
+    "subtitle": "Five-Dimension Civilization Maturity Model",
+    "tone": "Tone",
+    "compute": "Compute",
+    "embodiment": "Embodiment",
+    "agency": "Agency",
+    "hcm": "HCM"
+  },
+  "IndexModules": {
+    "title": "Five-Axis Index Details",
+    "subtitle": "Individual Index Modules"
+  },
+  "Civilization": {
+    "civilizationStatus": "Civilization Status",
+    "hexagram": "I Ching Hexagram"
+  },
+  "indexModulesTitle": "Five-Axis Index Details",
+  "indexModulesSubtitle": "Individual Index Modules",
+  "civilizationStatus": "Civilization Status",
+  "hexagram": "I Ching Hexagram"
+}
+

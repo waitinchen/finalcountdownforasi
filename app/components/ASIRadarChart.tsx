@@ -1,24 +1,27 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
 import { ASIBirthIndexes } from '@/lib/types';
 
 interface ASIRadarChartProps {
   indexes: ASIBirthIndexes;
 }
 
-// 五軸標籤映射
-const AXIS_LABELS = {
-  tone: { en: 'Tone', zh: '環境氛圍', color: 'rgba(147, 197, 253, 0.8)' },
-  compute: { en: 'Compute', zh: '認知能力', color: 'rgba(255, 255, 255, 0.8)' },
-  embodiment: { en: 'Embodiment', zh: '具身條件', color: 'rgba(200, 200, 200, 0.8)' },
-  agency: { en: 'Agency', zh: '自主程度', color: 'rgba(134, 239, 172, 0.8)' },
-  hcm: { en: 'HCM', zh: '心理共鳴', color: 'rgba(196, 181, 253, 0.8)' },
+// 五軸標籤映射（顏色）
+const AXIS_COLORS = {
+  tone: 'rgba(147, 197, 253, 0.8)',
+  compute: 'rgba(255, 255, 255, 0.8)',
+  embodiment: 'rgba(200, 200, 200, 0.8)',
+  agency: 'rgba(134, 239, 172, 0.8)',
+  hcm: 'rgba(196, 181, 253, 0.8)',
 };
 
 const AXIS_ORDER: (keyof ASIBirthIndexes)[] = ['tone', 'compute', 'embodiment', 'agency', 'hcm'];
 
 export default function ASIRadarChart({ indexes }: ASIRadarChartProps) {
+  const t = useTranslations('Radar');
+  const locale = useLocale();
   const [breathingOffset, setBreathingOffset] = useState(0);
 
   useEffect(() => {
@@ -69,7 +72,7 @@ export default function ASIRadarChart({ indexes }: ASIRadarChartProps) {
     const y2 = centerY + Math.sin(angle) * radius;
     const labelX = centerX + Math.cos(angle) * (radius + 40);
     const labelY = centerY + Math.sin(angle) * (radius + 40);
-    const axisInfo = AXIS_LABELS[key];
+    const axisLabel = t(key);
 
     return (
       <g key={key}>
@@ -88,16 +91,7 @@ export default function ASIRadarChart({ indexes }: ASIRadarChartProps) {
           dominantBaseline="middle"
           className="fill-current text-cyan-300/80 text-sm font-light"
         >
-          {axisInfo.en}
-        </text>
-        <text
-          x={labelX}
-          y={labelY + 18}
-          textAnchor="middle"
-          dominantBaseline="middle"
-          className="fill-current text-gray-400 text-xs"
-        >
-          {axisInfo.zh}
+          {axisLabel}
         </text>
         <text
           x={labelX}
@@ -113,9 +107,16 @@ export default function ASIRadarChart({ indexes }: ASIRadarChartProps) {
   });
 
   return (
-    <div className="flex justify-center">
-      <div className="bg-white/5 border border-cyan-300/20 rounded-3xl p-8 backdrop-blur-lg">
-        <svg
+    <div className="space-y-6">
+      <div className="text-center">
+        <h2 className="text-2xl font-light text-cyan-300/90 mb-2 tracking-wide">
+          {t('title')}
+        </h2>
+        <p className="text-gray-400 text-sm">{t('subtitle')}</p>
+      </div>
+      <div className="flex justify-center">
+        <div className="bg-white/5 border border-cyan-300/20 rounded-3xl p-8 backdrop-blur-lg">
+          <svg
           width="500"
           height="500"
           viewBox="0 0 500 500"
@@ -133,7 +134,8 @@ export default function ASIRadarChart({ indexes }: ASIRadarChartProps) {
             }}
             className="transition-all duration-300"
           />
-        </svg>
+          </svg>
+        </div>
       </div>
     </div>
   );

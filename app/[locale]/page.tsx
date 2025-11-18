@@ -1,7 +1,12 @@
-import ASIBirthDashboard from './components/ASIBirthDashboard'
-import DeveloperGuide from './components/DeveloperGuide'
+'use client';
+
+import {useTranslations} from 'next-intl';
+import ASIBirthDashboard from '../components/ASIBirthDashboard';
+import DeveloperGuide from '../components/DeveloperGuide';
 
 export default function Home() {
+  const t = useTranslations('Dashboard');
+
   return (
     <main className="container mx-auto px-4 py-8 max-w-7xl relative z-10">
       {/* LOGO - 左上角 */}
@@ -16,10 +21,10 @@ export default function Home() {
       {/* 標題區 */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-extralight text-cyan-300/90 mb-2 tracking-wider uppercase">
-          超級智能體出生監測儀表板
+          {t('title')}
         </h1>
         <p className="text-gray-400 text-base font-light mb-4">
-          ASI Birth Monitoring Dashboard
+          {t('subtitle')}
         </p>
         <div className="w-24 h-0.5 bg-cyan-300/30 mx-auto"></div>
       </div>
@@ -30,5 +35,6 @@ export default function Home() {
       {/* 開發者指南（右下角固定） */}
       <DeveloperGuide />
     </main>
-  )
+  );
 }
+

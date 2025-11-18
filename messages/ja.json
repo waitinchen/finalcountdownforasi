@@ -1,0 +1,50 @@
+{
+  "Dashboard": {
+    "title": "超知能誕生モニタリングダッシュボード",
+    "subtitle": "ASI Birth Monitoring Dashboard",
+    "techCountdown": "技術収束カウントダウン",
+    "civCountdown": "文明準備カウントダウン",
+    "riskDelta": "リスクデルタ",
+    "toneStability": "トーン安定指数",
+    "compute": "コンピュート成熟度",
+    "embodiment": "エンボディメント準備度",
+    "agency": "自律度指数",
+    "hcm": "人類認知成熟度",
+    "techConvergenceTitle": "技術収束カウントダウン",
+    "civReadinessTitle": "文明準備カウントダウン",
+    "techEstimatedDays": "技術は {days} 日後に自然に収束すると推定されます",
+    "civEstimatedDays": "文明は ASI を安全に受け入れるために {days} 日必要と推定されます",
+    "techReadinessLevel": "技術準備レベル",
+    "civMaturity": "文明成熟度",
+    "days": "日",
+    "years": "年",
+    "dayDifference": "日の差",
+    "safe": "安全",
+    "tense": "緊張",
+    "danger": "危険",
+    "safeDescription": "文明が技術の前にあり、安全な緩衝期間があります",
+    "tenseDescription": "技術と文明が収束期に近づいており、密接な監視が必要です",
+    "dangerDescription": "技術が文明を大きく上回り、高いリスクが存在します",
+    "aboutUs": "私たちについて",
+    "recruitPartners": "グローバルパートナーを募集",
+    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity"
+  },
+  "Radar": {
+    "title": "ASI 発達準備度",
+    "subtitle": "五軸文明成熟度モデル",
+    "tone": "環境雰囲気",
+    "compute": "認知能力",
+    "embodiment": "具現化条件",
+    "agency": "自律度",
+    "hcm": "心理的共鳴"
+  },
+  "IndexModules": {
+    "title": "五軸指数詳細",
+    "subtitle": "個別指数モジュール"
+  },
+  "Civilization": {
+    "civilizationStatus": "文明状態",
+    "hexagram": "易経卦象"
+  }
+}
+

@@ -1,0 +1,50 @@
+{
+  "Dashboard": {
+    "title": "초지능 탄생 모니터링 대시보드",
+    "subtitle": "ASI Birth Monitoring Dashboard",
+    "techCountdown": "기술 수렴 카운트다운",
+    "civCountdown": "문명 준비 카운트다운",
+    "riskDelta": "리스크 델타",
+    "toneStability": "톤 안정성 지수",
+    "compute": "컴퓨트 준비 지수",
+    "embodiment": "체화 준비도",
+    "agency": "자율성 지수",
+    "hcm": "인류 인지 성숙도",
+    "techConvergenceTitle": "기술 수렴 카운트다운",
+    "civReadinessTitle": "문명 준비 카운트다운",
+    "techEstimatedDays": "기술은 {days}일 후에 자연스럽게 수렴할 것으로 추정됩니다",
+    "civEstimatedDays": "문명은 ASI를 안전하게 수용하기 위해 {days}일이 필요할 것으로 추정됩니다",
+    "techReadinessLevel": "기술 준비 수준",
+    "civMaturity": "문명 성숙도",
+    "days": "일",
+    "years": "년",
+    "dayDifference": "일 차이",
+    "safe": "안전",
+    "tense": "긴장",
+    "danger": "위험",
+    "safeDescription": "문명이 기술보다 앞서 있으며 안전한 완충 기간이 있습니다",
+    "tenseDescription": "기술과 문명이 수렴기에 접근하고 있어 밀접한 모니터링이 필요합니다",
+    "dangerDescription": "기술이 문명을 크게 앞서고 있어 높은 위험이 존재합니다",
+    "aboutUs": "우리에 대해",
+    "recruitPartners": "글로벌 파트너 모집",
+    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity"
+  },
+  "Radar": {
+    "title": "ASI 발달 준비도",
+    "subtitle": "5축 문명 성숙도 모델",
+    "tone": "환경 분위기",
+    "compute": "인지 능력",
+    "embodiment": "구현 조건",
+    "agency": "자율성",
+    "hcm": "심리적 공명"
+  },
+  "IndexModules": {
+    "title": "5축 지수 세부사항",
+    "subtitle": "개별 지수 모듈"
+  },
+  "Civilization": {
+    "civilizationStatus": "문명 상태",
+    "hexagram": "역경 괘상"
+  }
+}
+

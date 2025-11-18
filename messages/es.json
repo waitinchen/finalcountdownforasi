@@ -1,0 +1,50 @@
+{
+  "Dashboard": {
+    "title": "Panel de Monitoreo del Nacimiento de ASI",
+    "subtitle": "ASI Birth Monitoring Dashboard",
+    "techCountdown": "Cuenta regresiva de convergencia tecnológica",
+    "civCountdown": "Cuenta regresiva de preparación civilizatoria",
+    "riskDelta": "Delta de riesgo",
+    "toneStability": "Índice de estabilidad del tono",
+    "compute": "Madurez computacional",
+    "embodiment": "Preparación de encarnación",
+    "agency": "Índice de autonomía",
+    "hcm": "Madurez cognitiva humana",
+    "techConvergenceTitle": "Cuenta regresiva de convergencia tecnológica",
+    "civReadinessTitle": "Cuenta regresiva de preparación civilizatoria",
+    "techEstimatedDays": "Se estima que la tecnología logrará la convergencia naturalmente en {days} días",
+    "civEstimatedDays": "Se estima que la civilización necesitará {days} días para acomodar de manera segura a ASI",
+    "techReadinessLevel": "Nivel de preparación tecnológica",
+    "civMaturity": "Madurez civilizatoria",
+    "days": "días",
+    "years": "años",
+    "dayDifference": "diferencia de días",
+    "safe": "Seguro",
+    "tense": "Tenso",
+    "danger": "Peligro",
+    "safeDescription": "La civilización está por delante de la tecnología, con un período de amortiguación seguro",
+    "tenseDescription": "La tecnología y la civilización se acercan al período de convergencia, requiriendo un monitoreo cercano",
+    "dangerDescription": "La tecnología está muy por delante de la civilización, existe un alto riesgo",
+    "aboutUs": "Acerca de nosotros",
+    "recruitPartners": "Reclutar socios globales",
+    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity"
+  },
+  "Radar": {
+    "title": "Preparación para el Desarrollo de ASI",
+    "subtitle": "Modelo de Madurez Civilizatoria de Cinco Dimensiones",
+    "tone": "Ambiente",
+    "compute": "Capacidad Cognitiva",
+    "embodiment": "Condiciones de Encarnación",
+    "agency": "Grado de Autonomía",
+    "hcm": "Resonancia Psicológica"
+  },
+  "IndexModules": {
+    "title": "Detalles del Índice de Cinco Ejes",
+    "subtitle": "Módulos de Índice Individual"
+  },
+  "Civilization": {
+    "civilizationStatus": "Estado de la Civilización",
+    "hexagram": "Hexagrama del I Ching"
+  }
+}
+

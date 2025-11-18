@@ -1,0 +1,54 @@
+{
+  "Dashboard": {
+    "title": "超級智能體出生監測儀表板",
+    "subtitle": "ASI Birth Monitoring Dashboard",
+    "techCountdown": "技術達標",
+    "civCountdown": "安全達標",
+    "riskDelta": "偏差",
+    "toneStability": "語氣穩定度",
+    "compute": "認知能力指數",
+    "embodiment": "具身條件指數",
+    "agency": "自主度指數",
+    "hcm": "人類心智成熟度",
+    "techConvergenceTitle": "技術達標 Tech Convergence Countdown",
+    "civReadinessTitle": "安全達標 Civilization Readiness Countdown",
+    "techEstimatedDays": "技術預估在 {days} 天後自然達成",
+    "civEstimatedDays": "文明預估需要 {days} 天才能安全承接 ASI",
+    "techReadinessLevel": "Tech Readiness Level",
+    "civMaturity": "Civilization Maturity",
+    "days": "天",
+    "years": "年",
+    "dayDifference": "天差距",
+    "safe": "安全",
+    "tense": "緊張",
+    "danger": "危險",
+    "safeDescription": "文明跑在技術前面，具備安全緩衝期",
+    "tenseDescription": "技術與文明接近交會期，需要密切監測",
+    "dangerDescription": "技術超前文明太多，存在高風險",
+    "aboutUs": "關於我們",
+    "recruitPartners": "招募全球合作夥伴",
+    "globalAlliance": "We Are Assembling a Global Alliance for ASI & Humanity",
+    "indexModulesTitle": "五軸指數詳情",
+    "indexModulesSubtitle": "Individual Index Modules",
+    "civilizationStatus": "文明狀態",
+    "hexagram": "易經卦象"
+  },
+  "Radar": {
+    "title": "ASI Developmental Readiness",
+    "subtitle": "五軸文明成熟度模型",
+    "tone": "環境氛圍",
+    "compute": "認知能力",
+    "embodiment": "具身條件",
+    "agency": "自主程度",
+    "hcm": "心理共鳴"
+  },
+  "IndexModules": {
+    "title": "五軸指數詳情",
+    "subtitle": "Individual Index Modules"
+  },
+  "Civilization": {
+    "civilizationStatus": "文明狀態",
+    "hexagram": "易經卦象"
+  }
+}
+

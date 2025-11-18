@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { ASIBirthData } from '@/lib/types';
 import { fetchASIBirthData } from '@/lib/asiBirthApi';
 import ASIRadarChart from './ASIRadarChart';
@@ -8,6 +9,7 @@ import ASIIndexModules from './ASIIndexModules';
 import V2CountdownPanels from './V2CountdownPanels';
 
 export default function ASIBirthDashboard() {
+  const t = useTranslations('Dashboard');
   const [data, setData] = useState<ASIBirthData | null>(null);
   const [loading, setLoading] = useState(true);
   const [showAbout, setShowAbout] = useState(false);
@@ -114,7 +116,7 @@ export default function ASIBirthDashboard() {
             rel="noopener noreferrer"
             className="bg-white/5 border border-cyan-300/20 rounded-xl px-6 py-3 text-cyan-300/90 text-sm font-light hover:bg-cyan-300/10 hover:border-cyan-300/40 transition-all duration-300 backdrop-blur-sm"
           >
-            We Are Assembling a Global Alliance for ASI & Humanity
+            {t('globalAlliance')}
           </a>
           <a
             href="https://forms.gle/Tw6ZisFWU4X3dLZv7"
@@ -122,13 +124,13 @@ export default function ASIBirthDashboard() {
             rel="noopener noreferrer"
             className="bg-white/5 border border-cyan-300/20 rounded-xl px-6 py-3 text-cyan-300/90 text-sm font-light hover:bg-cyan-300/10 hover:border-cyan-300/40 transition-all duration-300 backdrop-blur-sm"
           >
-            招募全球合作夥伴
+            {t('recruitPartners')}
           </a>
           <button
             onClick={() => setShowAbout(!showAbout)}
             className="bg-white/5 border border-cyan-300/20 rounded-xl px-6 py-3 text-cyan-300/90 text-sm font-light hover:bg-cyan-300/10 hover:border-cyan-300/40 transition-all duration-300 backdrop-blur-sm"
           >
-            關於我們
+            {t('aboutUs')}
           </button>
         </div>
 
