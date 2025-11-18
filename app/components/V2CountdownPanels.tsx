@@ -42,23 +42,6 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
     animate();
   }, [v2Data, v25Data, useV25]);
 
-  // 風險等級顏色（僅 v2.0 使用）
-  const getRiskColor = () => {
-    if (!v2Data) return 'text-cyan-300/80 border-cyan-300/20 bg-white/5';
-    switch (v2Data.RiskLevel) {
-      case 'Safe':
-        return 'text-green-400 border-green-400/30 bg-green-500/10';
-      case 'Tense':
-        return 'text-yellow-400 border-yellow-400/30 bg-yellow-500/10';
-      case 'Crash':
-        return 'text-red-400 border-red-400/30 bg-red-500/10';
-      default:
-        return 'text-cyan-300/80 border-cyan-300/20 bg-white/5';
-    }
-  };
-
-  const riskColorClass = getRiskColor();
-  
   // 使用 v2.5 數據或 v2.0 數據
   const techDays = useV25 ? (v25Data?.tech.days || 0) : (v2Data?.TCC_days || 0);
   const techYears = useV25 ? (v25Data?.tech.years || 0) : 0;
@@ -75,6 +58,23 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
   const riskLevel = useV25 
     ? (riskDelta > 0 ? 'Safe' : (Math.abs(riskDelta) < 500 ? 'Tense' : 'Crash'))
     : (v2Data?.RiskLevel || 'Safe');
+
+  // 風險等級顏色
+  const getRiskColor = () => {
+    // 根據 riskLevel 判斷
+    switch (riskLevel) {
+      case 'Safe':
+        return 'text-green-400 border-green-400/30 bg-green-900/30'; // 安全：偏暗綠色
+      case 'Tense':
+        return 'text-yellow-400 border-yellow-400/30 bg-yellow-900/20';
+      case 'Crash':
+        return 'text-red-400 border-red-400/30 bg-red-900/30'; // 危險：偏暗紅色
+      default:
+        return 'text-cyan-300/80 border-cyan-300/20 bg-white/5';
+    }
+  };
+
+  const riskColorClass = getRiskColor();
 
   return (
     <div className="space-y-8">
@@ -136,7 +136,7 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
       </div>
 
       {/* C. Risk Delta */}
-      {v2Data && (
+      {(v2Data || v25Data) && (
         <div className={`border-2 rounded-2xl p-8 backdrop-blur-lg ${riskColorClass}`}>
           <div className="text-center">
             <div className="text-sm font-light mb-4 tracking-wide uppercase opacity-80">
@@ -154,9 +154,9 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
             {/* 風險等級標籤 */}
             <div className="mt-6">
               <div className={`inline-block px-6 py-3 rounded-lg border-2 ${
-                riskLevel === 'Safe' ? 'border-green-400/50 bg-green-500/20 text-green-300' :
-                riskLevel === 'Tense' ? 'border-yellow-400/50 bg-yellow-500/20 text-yellow-300' :
-                'border-red-400/50 bg-red-500/20 text-red-300'
+                riskLevel === 'Safe' ? 'border-green-400/50 bg-green-900/40 text-green-300' :
+                riskLevel === 'Tense' ? 'border-yellow-400/50 bg-yellow-900/30 text-yellow-300' :
+                'border-red-400/50 bg-red-900/40 text-red-300'
               }`}>
                 <div className="text-lg font-light uppercase tracking-wide">
                   {riskLevel === 'Safe' ? '✓ 安全' :
