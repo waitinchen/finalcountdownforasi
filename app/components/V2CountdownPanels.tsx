@@ -95,7 +95,7 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
                 ≈ {techYears.toFixed(1)} 年
               </div>
             )}
-            <div className="text-cyan-300/60 text-xs font-light italic mb-4">
+            <div className="text-cyan-300/60 text-base font-light italic mb-4">
               技術預估在 {Math.round(animatedTechDays).toLocaleString('zh-TW')} 天後自然達成
             </div>
             <div className="mt-4 pt-4 border-t border-cyan-300/20">
@@ -122,7 +122,7 @@ export default function V2CountdownPanels({ v2Data, v25Data }: V2CountdownPanels
                 ≈ {civYears.toFixed(1)} 年
               </div>
             )}
-            <div className="text-purple-300/60 text-xs font-light italic mb-4">
+            <div className="text-purple-300/60 text-base font-light italic mb-4">
               文明預估需要 {Math.round(animatedCivDays).toLocaleString('zh-TW')} 天才能安全承接 ASI
             </div>
             <div className="mt-4 pt-4 border-t border-purple-300/20">
