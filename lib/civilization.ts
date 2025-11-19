@@ -49,3 +49,4 @@ export function calculateCivilizationCode(data: ReadinessData): CivilizationCode
   return "seed";
 }
 
+

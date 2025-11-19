@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 };
 
 export function generateStaticParams() {
-  return ['en', 'zh', 'ja', 'ko', 'es'].map((locale) => ({locale}));
+  return ['en', 'zh', 'zhs', 'ja', 'ko', 'es'].map((locale) => ({locale}));
 }
 
 export default async function LocaleLayout({

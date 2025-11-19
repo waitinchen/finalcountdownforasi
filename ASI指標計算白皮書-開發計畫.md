@@ -215,3 +215,4 @@ export interface ReadinessData {
 - [ ] API 返回完整的數據結構
 - [ ] 文檔已更新
 
+

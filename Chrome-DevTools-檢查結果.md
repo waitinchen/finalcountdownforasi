@@ -105,3 +105,4 @@ fetch('http://localhost:3000/api/readiness')
 
 **請使用 `start-dev-verbose.ps1` 腳本啟動，並查看終端輸出！**
 
+

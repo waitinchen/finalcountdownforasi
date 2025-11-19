@@ -78,3 +78,4 @@ export function calculateCivLevel(hcmi: number): number {
   return hcmi / 100;
 }
 
+

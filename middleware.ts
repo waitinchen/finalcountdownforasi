@@ -2,19 +2,17 @@ import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
 
 export const routing = {
-  locales: ['en', 'zh', 'ja', 'ko', 'es'],
-  defaultLocale: 'en',
+  locales: ['en', 'zh', 'zhs', 'ja', 'ko', 'es'],
+  defaultLocale: 'ja', // 默认语言改为日文
   localePrefix: 'always' as const // 确保所有路径都包含语言前缀，包括默认语言
 };
 
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
-  // 处理根路径重定向
+  // 处理根路径重定向到日文（默认语言）
   if (request.nextUrl.pathname === '/') {
-    const locale = request.headers.get('accept-language')?.split(',')[0]?.split('-')[0] || 'en';
-    const validLocale = routing.locales.includes(locale) ? locale : routing.defaultLocale;
-    return NextResponse.redirect(new URL(`/${validLocale}`, request.url));
+    return NextResponse.redirect(new URL('/ja', request.url));
   }
 
   // 使用 next-intl 的 middleware 处理其他路径

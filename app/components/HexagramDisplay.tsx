@@ -90,3 +90,4 @@ export default function HexagramDisplay({ hexagram }: HexagramDisplayProps) {
   );
 }
 
+
