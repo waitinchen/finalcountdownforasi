@@ -5,7 +5,7 @@ import {useLocale} from 'next-intl';
 
 const languages = [
   { code: 'en', label: 'EN' },
-  { code: 'zh', label: '中文' },
+  { code: 'zh', label: '繁體' },
   { code: 'zhs', label: '简体' },
   { code: 'ja', label: '日本語' },
   { code: 'ko', label: '한국어' },

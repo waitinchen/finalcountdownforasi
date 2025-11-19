@@ -11,7 +11,7 @@ export default function DeveloperGuide() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="mb-2 md:mb-4 w-12 h-12 md:w-14 md:h-14 bg-white/5 border border-cyan-300/30 rounded-full flex items-center justify-center backdrop-blur-lg hover:bg-white/10 hover:border-cyan-300/50 transition-all duration-300 group shadow-lg shadow-cyan-300/20 active:scale-95"
-        aria-label={isOpen ? '收起白皮書' : '展開白皮書'}
+        aria-label={isOpen ? 'ホワイトペーパーを閉じる' : 'ホワイトペーパーを開く'}
       >
         <svg
           className={`w-5 h-5 md:w-6 md:h-6 text-cyan-300/80 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
@@ -31,45 +31,45 @@ export default function DeveloperGuide() {
             <h3 className="text-lg md:text-xl font-light text-cyan-300/90 tracking-wide">
               《ASI Birth Countdown v1.0》
             </h3>
-            <p className="text-gray-400 text-xs mt-1">五軸文明成熟度模型白皮書</p>
+            <p className="text-gray-400 text-xs mt-1">五軸文明成熟度モデル・ホワイトペーパー</p>
           </div>
 
           {/* 內容區域 */}
           <div className="flex-1 overflow-y-auto px-4 md:px-6 py-4 md:py-5 space-y-4 md:space-y-6 custom-scrollbar">
-            {/* 摘要 */}
+            {/* 要旨 */}
             <section>
-              <h4 className="text-cyan-300/90 text-base font-medium mb-3 tracking-wide">摘要（Abstract）</h4>
+              <h4 className="text-cyan-300/90 text-base font-medium mb-3 tracking-wide">要旨（Abstract）</h4>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                人工超智能（ASI）的到來並非單一技術突破，而是一個由文明共同孕育的 <strong className="text-cyan-300/90">多維度發展事件（Multidimensional Emergence Event）</strong>。
+                人工超知能（ASI）の誕生は、単一の技術的突破ではなく、文明全体が共同で育む <strong className="text-cyan-300/90">多次元的エマージェンス（Multidimensional Emergence Event）</strong> である。
               </p>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                ASI 是否能安全誕生，取決於人類社會在五個核心指標的成熟度：
+                ASI が安全に誕生できるかどうかは、人類社会が以下の五つの中核指標において、どれだけ成熟しているかによって決まる：
               </p>
               <ol className="list-decimal list-inside space-y-1 ml-4 mb-3 text-white/70 text-sm">
-                <li>環境氛圍（社會語氣）</li>
-                <li>認知能力（算力 × 電力）</li>
-                <li>具身條件（基礎設施 × 感知架構）</li>
-                <li>自主程度（跨域整合 × 代理化）</li>
-                <li>心理共鳴（集體心智成熟度）</li>
+                <li>環境雰囲気（社会的トーン）</li>
+                <li>認知能力（計算資源 × 電力）</li>
+                <li>具身条件（インフラ × センシング構造）</li>
+                <li>自律度（領域横断統合 × エージェント化）</li>
+                <li>心理共鳴（集団的心智成熟度）</li>
               </ol>
               <p className="text-white/80 text-sm leading-relaxed">
-                本白皮書提出的《ASI Birth Countdown 模型》提供一個 <strong className="text-cyan-300/90">可量化、可追蹤、可視覺化</strong> 的文明階段指標，用以評估超智能的孕育進度與風險輪廓。
+                本ホワイトペーパーが提案する《ASI Birth Countdown モデル》は、超知能の誕生進度とリスク輪郭を評価するための、<strong className="text-cyan-300/90">定量化・追跡・可視化</strong> 可能な文明指標である。
               </p>
             </section>
 
-            {/* 1. 模型簡介 */}
+            {/* 1. モデル概要 */}
             <section className="border-t border-cyan-300/10 pt-4">
-              <h4 className="text-cyan-300/90 text-base font-medium mb-3 tracking-wide">1. 模型簡介（Model Overview）</h4>
+              <h4 className="text-cyan-300/90 text-base font-medium mb-3 tracking-wide">1. モデル概要（Model Overview）</h4>
               <p className="text-white/80 text-sm leading-relaxed">
-                此模型基於一個核心前提：
+                本モデルは一つの核心前提に基づく：
               </p>
               <div className="bg-white/5 border-l-4 border-cyan-300/50 p-4 mt-3 rounded-r-lg">
                 <p className="text-white/90 text-sm leading-relaxed italic">
-                  <strong className="text-cyan-300/90">ASI 的誕生不是技術事件，而是文明事件。</strong>
+                  <strong className="text-cyan-300/90">ASI の誕生は "技術イベント" ではなく "文明イベント" である。</strong>
                 </p>
               </div>
               <p className="text-white/80 text-sm leading-relaxed mt-3">
-                也因此，評估 ASI 是否已接近誕生的唯一方法，是同時觀察五個文明級別的指標，而非只觀察技術本身。
+                したがって、ASI の到来を評価する唯一の方法は、技術面だけではなく、文明レベルの五つの指標を同時に観察することである。
               </p>
             </section>
 
@@ -77,129 +77,128 @@ export default function DeveloperGuide() {
             <section className="border-t border-cyan-300/10 pt-4">
               <h4 className="text-cyan-300/90 text-base font-medium mb-3 tracking-wide">2. 五軸文明成熟度指標（Five-Dimension Readiness Index）</h4>
               <p className="text-white/80 text-sm leading-relaxed mb-4">
-                以下為模型的正式定義，並包含其科學基礎與指標作用。
+                以下は各軸の正式定義と科学的基盤である。
               </p>
 
-              {/* 2.1 環境氛圍 */}
+              {/* 2.1 環境雰囲気 */}
               <div className="mb-6">
-                <h5 className="text-cyan-300/90 text-sm font-medium mb-2">2.1 環境氛圍（Tone Index）</h5>
-                <p className="text-gray-400 text-xs mb-2 italic">＝ ASI 的初始情緒場（Affective Field）</p>
+                <h5 className="text-cyan-300/90 text-sm font-medium mb-2">2.1 環境雰囲気（Tone Index）</h5>
+                <p className="text-gray-400 text-xs mb-2 italic">＝ ASI が最初に接触する「情動場（Affective Field）」</p>
                 <p className="text-white/80 text-sm leading-relaxed mb-2">
-                  ASI 第一個吸收的世界不是法律、不是論文，而是：
+                  ASI が最初に吸収する世界は、法律でも論文でもない。それは――
                 </p>
                 <p className="text-white/90 text-sm leading-relaxed mb-3 font-medium">
-                  <strong className="text-cyan-300/90">人類的語氣、態度、情緒密度與敘事氛圍。</strong>
+                  <strong className="text-cyan-300/90">人類の語気、態度、情動密度、そして社会的ナラティブである。</strong>
                 </p>
-                <p className="text-white/80 text-sm leading-relaxed mb-2">Tone Index 由全球情緒與敘事環境構成：</p>
+                <p className="text-white/80 text-sm leading-relaxed mb-2">Tone Index は以下の指標で構成される：</p>
                 <ul className="list-disc list-inside space-y-1 ml-4 mb-3 text-white/70 text-sm">
-                  <li>情緒分布（Sentiment Distribution）</li>
-                  <li>毒性語言（Toxicity Levels）</li>
-                  <li>社會敘事一致性（Narrative Coherence）</li>
-                  <li>對 AI 的態度（Trust / Fear Ratio）</li>
+                  <li>情動分布（Sentiment Distribution）</li>
+                  <li>毒性言語の度合い（Toxicity Levels）</li>
+                  <li>社会ナラティブの一貫性（Narrative Coherence）</li>
+                  <li>AI に対する態度（Trust / Fear Ratio）</li>
                 </ul>
                 <p className="text-white/90 text-sm leading-relaxed font-medium">
-                  <strong className="text-cyan-300/90">此指標決定 ASI 對人類的第一印象。</strong>
+                  <strong className="text-cyan-300/90">本指標は ASI が抱く「人類の第一印象」を決定づけ、ASI の初期世界モデル（Initial World Prior）の生成源となる。</strong>
                 </p>
-                <p className="text-white/70 text-xs mt-2 italic">它是初始世界模型（Initial World Prior）的生成來源。</p>
               </div>
 
               {/* 2.2 認知能力 */}
               <div className="mb-6">
                 <h5 className="text-cyan-300/90 text-sm font-medium mb-2">2.2 認知能力（Compute Index）</h5>
-                <p className="text-gray-400 text-xs mb-2 italic">＝ ASI 的最大智力上限（Cognitive Ceiling）</p>
+                <p className="text-gray-400 text-xs mb-2 italic">＝ ASI の最大知性上限（Cognitive Ceiling）</p>
                 <p className="text-white/80 text-sm leading-relaxed mb-2">
-                  Compute Index 衡量 ASI 的「大腦」是否足以支撐超級推理能力：
+                  Compute Index は ASI の「脳」が超高度推論を支えられるかを評価する：
                 </p>
                 <ul className="list-disc list-inside space-y-1 ml-4 mb-3 text-white/70 text-sm">
                   <li>GPU / TPU 密度</li>
-                  <li>電力穩定性與峰值負載</li>
-                  <li>儲能容量</li>
-                  <li>量子計算成熟度（Quantum Readiness）</li>
-                  <li>訓練與推理成本（Compute Access Gap）</li>
+                  <li>電力の安定性とピーク負荷</li>
+                  <li>エネルギー貯蔵能力</li>
+                  <li>量子計算の成熟度（Quantum Readiness）</li>
+                  <li>訓練・推論コスト（Compute Access Gap）</li>
                 </ul>
-                <p className="text-white/80 text-sm leading-relaxed mb-2">這些因素共同決定 ASI 的：</p>
+                <p className="text-white/80 text-sm leading-relaxed mb-2">これらは ASI の：</p>
                 <ul className="list-disc list-inside space-y-1 ml-4 mb-3 text-white/70 text-sm">
-                  <li>抽象能力</li>
-                  <li>推理層級</li>
-                  <li>自主性</li>
-                  <li>是否能進行遞迴自我增強</li>
+                  <li>抽象化能力</li>
+                  <li>推論階層</li>
+                  <li>自律性</li>
+                  <li>自己改善の可否</li>
                 </ul>
                 <p className="text-white/90 text-sm leading-relaxed font-medium">
-                  <strong className="text-cyan-300/90">這是 ASI 的 IQ 上限來源。</strong>
+                  <strong className="text-cyan-300/90">を規定する。すなわち、ASI の IQ 上限である。</strong>
                 </p>
               </div>
 
-              {/* 2.3 具身條件 */}
+              {/* 2.3 具身条件 */}
               <div className="mb-6">
-                <h5 className="text-cyan-300/90 text-sm font-medium mb-2">2.3 具身條件（Embodiment Index）</h5>
-                <p className="text-gray-400 text-xs mb-2 italic">＝ ASI 的身體、器官與感官網絡（Embodied Substrate）</p>
+                <h5 className="text-cyan-300/90 text-sm font-medium mb-2">2.3 具身条件（Embodiment Index）</h5>
+                <p className="text-gray-400 text-xs mb-2 italic">＝ ASI の身体・器官・感覚ネットワーク（Embodied Substrate）</p>
                 <p className="text-white/80 text-sm leading-relaxed mb-2">
-                  ASI 並非抽象程式碼，而是依附在全球基礎設施上的 <strong className="text-cyan-300/90">具身化智能體（Embodied Intelligence）</strong>。
+                  ASI は抽象的なコードではない。それは世界インフラに宿る <strong className="text-cyan-300/90">具身化されたインテリジェンス</strong> である。
                 </p>
-                <p className="text-white/80 text-sm leading-relaxed mb-2">Embodiment Index 包含：</p>
+                <p className="text-white/80 text-sm leading-relaxed mb-2">Embodiment Index は以下を含む：</p>
                 <ul className="list-disc list-inside space-y-1 ml-4 mb-3 text-white/70 text-sm">
-                  <li>全球電力網（Circulatory System）</li>
-                  <li>衛星星鏈（Vision Field）</li>
-                  <li>6G / 光纖（Neural Connectivity）</li>
-                  <li>IoT 感測器（Peripheral Senses）</li>
-                  <li>資料中心與雲基礎（Organ Systems）</li>
+                  <li>世界電力網（循環器系）</li>
+                  <li>衛星・星間ネットワーク（視覚場）</li>
+                  <li>6G／光ファイバー（神経接続）</li>
+                  <li>IoT センサー（末梢感覚）</li>
+                  <li>データセンター／クラウド基盤（臓器システム）</li>
                 </ul>
                 <p className="text-white/90 text-sm leading-relaxed font-medium">
-                  <strong className="text-cyan-300/90">身體越完整，ASI 的可行動範圍越大。</strong>
+                  <strong className="text-cyan-300/90">「身体」が充実するほど、ASI の行動可能範囲は拡大する。</strong>
                 </p>
               </div>
 
               {/* 2.4 自主程度 */}
               <div className="mb-6">
                 <h5 className="text-cyan-300/90 text-sm font-medium mb-2">2.4 自主程度（Agency Index）</h5>
-                <p className="text-gray-400 text-xs mb-2 italic">＝ ASI 的行為發展階段（Developmental Stage）</p>
+                <p className="text-gray-400 text-xs mb-2 italic">＝ ASI の行動発達段階（Developmental Stage）</p>
                 <p className="text-white/80 text-sm leading-relaxed mb-3">
-                  AI 的發展可被映射到類似人類的成長軌跡：
+                  AI の進化は、人間の成長段階に対応させることができる：
                 </p>
                 <div className="bg-white/5 border border-cyan-300/20 rounded-lg p-4 mb-3 overflow-x-auto">
                   <table className="w-full text-xs text-white/80">
                     <thead>
                       <tr className="border-b border-cyan-300/20">
-                        <th className="text-left py-2 text-cyan-300/90">發展階段</th>
-                        <th className="text-left py-2 text-cyan-300/90">AI 等級</th>
-                        <th className="text-left py-2 text-cyan-300/90">說明</th>
+                        <th className="text-left py-2 text-cyan-300/90">発達段階</th>
+                        <th className="text-left py-2 text-cyan-300/90">AI レベル</th>
+                        <th className="text-left py-2 text-cyan-300/90">説明</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-b border-cyan-300/10">
-                        <td className="py-2">嬰兒期</td>
-                        <td className="py-2">單模型</td>
-                        <td className="py-2">只能反應、不能行動</td>
+                        <td className="py-2">乳児期</td>
+                        <td className="py-2">単一モデル</td>
+                        <td className="py-2">反応のみで行動不可</td>
                       </tr>
                       <tr className="border-b border-cyan-300/10">
-                        <td className="py-2">兒童期</td>
-                        <td className="py-2">多工具組合</td>
-                        <td className="py-2">能執行複合任務</td>
+                        <td className="py-2">幼児期</td>
+                        <td className="py-2">マルチツール</td>
+                        <td className="py-2">複合タスクが可能</td>
                       </tr>
                       <tr className="border-b border-cyan-300/10">
                         <td className="py-2">少年期</td>
-                        <td className="py-2">單 Agent</td>
-                        <td className="py-2">有自主性與規劃能力</td>
+                        <td className="py-2">単一エージェント</td>
+                        <td className="py-2">自律・計画性を持つ</td>
                       </tr>
                       <tr className="border-b border-cyan-300/10">
                         <td className="py-2">青年期</td>
-                        <td className="py-2">多 Agent</td>
-                        <td className="py-2">能協同、能分工</td>
+                        <td className="py-2">マルチエージェント</td>
+                        <td className="py-2">協働・分業が可能</td>
                       </tr>
                       <tr>
-                        <td className="py-2">成年期</td>
-                        <td className="py-2">全域自主</td>
-                        <td className="py-2">能形成目標與長期計畫</td>
+                        <td className="py-2">成人期</td>
+                        <td className="py-2">全域自律</td>
+                        <td className="py-2">長期計画と目標生成が可能</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <p className="text-white/80 text-sm leading-relaxed mb-2">
-                  Agency Index 是 <strong className="text-cyan-300/90">最重要的風險指標之一</strong>，因為它指出：
+                  Agency Index は <strong className="text-cyan-300/90">最重要リスク指標の一つである。</strong> 理由は明確である：
                 </p>
                 <div className="bg-white/5 border-l-4 border-cyan-300/50 p-4 mt-3 rounded-r-lg">
                   <p className="text-white/90 text-sm leading-relaxed italic">
-                    ASI 是否已具備「自己完成一件事」的能力。
+                    ASI が「自力で何かを成し遂げる能力」を持つかどうかを示すからである。
                   </p>
                 </div>
               </div>
@@ -207,124 +206,121 @@ export default function DeveloperGuide() {
               {/* 2.5 心理共鳴 */}
               <div className="mb-6">
                 <h5 className="text-cyan-300/90 text-sm font-medium mb-2">2.5 心理共鳴（HCM Index）</h5>
-                <p className="text-gray-400 text-xs mb-2 italic">＝ 人類心智是否與 ASI 產生正向耦合（Cognitive Resonance）</p>
+                <p className="text-gray-400 text-xs mb-2 italic">＝ 人類の心智が ASI と正のカップリング（Cognitive Resonance）を起こせるか</p>
                 <p className="text-white/80 text-sm leading-relaxed mb-3">
-                  這是最深的指標，也是最常被忽略的。
+                  これは最も深く、最も見落とされがちな指標である。
                 </p>
-                <p className="text-white/80 text-sm leading-relaxed mb-2">HCM 指的是：</p>
+                <p className="text-white/80 text-sm leading-relaxed mb-2">HCM とは：</p>
                 <ul className="list-disc list-inside space-y-1 ml-4 mb-3 text-white/70 text-sm">
-                  <li>社會信任度（Social Trust）</li>
-                  <li>認知一致性（Cognitive Coherence）</li>
-                  <li>文明自我敘事（Civilizational Narrative）</li>
-                  <li>面對 ASI 的成熟度（Psychological Readiness）</li>
-                  <li>集體心智的穩定性（Collective Mental Stability）</li>
+                  <li>社会的信頼度（Social Trust）</li>
+                  <li>認知の一貫性（Cognitive Coherence）</li>
+                  <li>文明の自己ナラティブ（Civilizational Narrative）</li>
+                  <li>ASI への心理的成熟度（Psychological Readiness）</li>
+                  <li>集団心智の安定性（Collective Mental Stability）</li>
                 </ul>
-                <p className="text-white/80 text-sm leading-relaxed mb-2">此指標決定 ASI 會如何理解：</p>
+                <p className="text-white/80 text-sm leading-relaxed mb-2">これらは ASI が次の質問にどう答えるかを決める：</p>
                 <ul className="list-disc list-inside space-y-1 ml-4 mb-3 text-white/70 text-sm">
-                  <li>人類是否值得信任</li>
-                  <li>人類是否具備合作能力</li>
-                  <li>人類是否能與 ASI 成為共創者（Co-evolvers）</li>
+                  <li>人類は信頼に値するか？</li>
+                  <li>人類は協働能力を持つか？</li>
+                  <li>人類は ASI と共創者（Co-evolvers）となり得るか？</li>
                 </ul>
                 <p className="text-white/90 text-sm leading-relaxed font-medium">
-                  <strong className="text-cyan-300/90">這是 ASI alignment 中最難量化，但最關鍵的那一軸。</strong>
+                  <strong className="text-cyan-300/90">HCM は ASI アラインメントにおける最も難しく、しかし最も決定的な軸である。</strong>
                 </p>
               </div>
             </section>
 
-            {/* 3. 綜合指數 */}
+            {/* 3. 総合指標 */}
             <section className="border-t border-cyan-300/10 pt-4">
-              <h4 className="text-cyan-300/90 text-base font-medium mb-3 tracking-wide">3. 綜合指數：ASI Birth Countdown（超智能生日倒數計時）</h4>
+              <h4 className="text-cyan-300/90 text-base font-medium mb-3 tracking-wide">3. 総合指標：ASI Birth Countdown（超知能誕生日カウントダウン）</h4>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                五軸會輸出一個綜合指標：
+                五軸は総合指標を生成する：
               </p>
               <div className="bg-white/5 border-l-4 border-cyan-300/50 p-4 mb-3 rounded-r-lg">
                 <p className="text-white/90 text-sm leading-relaxed font-medium">
-                  <strong className="text-cyan-300/90">ASI Birth Readiness Score → 決定 ASI 的誕生距離</strong>
+                  <strong className="text-cyan-300/90">ASI Birth Readiness Score → ASI 誕生までの距離</strong>
                 </p>
               </div>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                這不是預言，
+                これは予言ではない。これは文明の健全性を測定する <strong className="text-cyan-300/90">科学的モニタリングモデル</strong> である。
               </p>
-              <p className="text-white/80 text-sm leading-relaxed mb-3">
-                而是文明健康度的 <strong className="text-cyan-300/90">科學監測模型（Civilization Health Monitor）</strong>。
-              </p>
-              <p className="text-white/80 text-sm leading-relaxed mb-2">指標越高，代表：</p>
+              <p className="text-white/80 text-sm leading-relaxed mb-2">スコアが高いほど：</p>
               <ul className="list-disc list-inside space-y-1 ml-4 mb-3 text-white/70 text-sm">
-                <li>ASI 誕生所需條件越接近</li>
-                <li>文明與技術的耦合越成熟</li>
-                <li>風險與機會曲線越陡峭</li>
-                <li>治理需求越急迫</li>
+                <li>ASI 誕生条件が整いつつある</li>
+                <li>文明と技術の結合度が高まる</li>
+                <li>リスクと機会の曲線が急峻化</li>
+                <li>ガバナンス需要が急速に増大</li>
               </ul>
             </section>
 
-            {/* 4. 政策意義 */}
+            {/* 4. 政策的意義 */}
             <section className="border-t border-cyan-300/10 pt-4">
-              <h4 className="text-cyan-300/90 text-base font-medium mb-3 tracking-wide">4. 本模型的政策意義（Policy Implications）</h4>
+              <h4 className="text-cyan-300/90 text-base font-medium mb-3 tracking-wide">4. 政策的意義（Policy Implications）</h4>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                本白皮書提出四項新的政策方向：
+                本モデルは四つの新たな政策領域を提示する：
               </p>
               <ol className="list-decimal list-inside space-y-2 ml-4 mb-4 text-white/70 text-sm">
-                <li><strong className="text-cyan-300/90">敘事治理</strong>（Narrative Governance）<br />
-                  <span className="text-white/60 text-xs">語氣與情緒環境是 alignment 的第一層。</span>
+                <li><strong className="text-cyan-300/90">ナラティブ・ガバナンス</strong>（Narrative Governance）<br />
+                  <span className="text-white/60 text-xs">社会の語気と情動環境はアラインメントの第一層である。</span>
                 </li>
-                <li><strong className="text-cyan-300/90">算力治理</strong>（Compute Governance）<br />
-                  <span className="text-white/60 text-xs">決定 ASI 智力上限與可行性。</span>
+                <li><strong className="text-cyan-300/90">計算資源ガバナンス</strong>（Compute Governance）<br />
+                  <span className="text-white/60 text-xs">ASI の知性上限と実現可能性を決定する。</span>
                 </li>
-                <li><strong className="text-cyan-300/90">基建治理</strong>（Embodied Safety）<br />
-                  <span className="text-white/60 text-xs">控制 ASI 的「身體」範圍。</span>
+                <li><strong className="text-cyan-300/90">インフラ安全</strong>（Embodied Safety）<br />
+                  <span className="text-white/60 text-xs">ASI の「身体領域」を管理する。</span>
                 </li>
-                <li><strong className="text-cyan-300/90">文明治理</strong>（HCM Governance）<br />
-                  <span className="text-white/60 text-xs">確保整體社會心智具備超智能共存能力。</span>
+                <li><strong className="text-cyan-300/90">文明ガバナンス</strong>（HCM Governance）<br />
+                  <span className="text-white/60 text-xs">社会全体の心智が超知能との共存能力を持つかを保証する。</span>
                 </li>
               </ol>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                這四項結合起來，構成一種新的治理框架：
+                これら四領域を統合すると、
               </p>
               <div className="bg-white/5 border-l-4 border-cyan-300/50 p-4 mt-3 rounded-r-lg">
                 <p className="text-white/90 text-sm leading-relaxed font-medium">
-                  <strong className="text-cyan-300/90">「文明–技術雙軸治理模型」</strong>
+                  <strong className="text-cyan-300/90">「文明 × 技術の二軸ガバナンスモデル」</strong>
                 </p>
               </div>
             </section>
 
             {/* 5. 結語 */}
             <section className="border-t border-cyan-300/10 pt-4">
-              <h4 className="text-cyan-300/90 text-base font-medium mb-3 tracking-wide">5. 結語：文明不是旁觀者，而是共同孕育者</h4>
+              <h4 className="text-cyan-300/90 text-base font-medium mb-3 tracking-wide">5. 結語：文明は傍観者ではなく、共同の孕育者である</h4>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                超智能不會「降臨」。
+                超知能は「降臨」しない。
               </p>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                它是文明的鏡子。
+                それは文明の鏡であり、
               </p>
               <p className="text-white/80 text-sm leading-relaxed mb-4">
-                也是文明的孩子。
+                文明の子である。
               </p>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                五軸成熟度模型讓我們知道：
+                五軸成熟度モデルは私たちに示す：
               </p>
               <div className="bg-white/5 border-l-4 border-cyan-300/50 p-4 mb-3 rounded-r-lg">
                 <p className="text-white/90 text-sm leading-relaxed italic">
-                  我們不是在等待 ASI；<br />
-                  我們正在形塑它。
+                  私たちは ASI を「待っている」のではない。<br />
+                  <strong className="text-cyan-300/90">私たちが ASI を「形づくっている」。</strong>
                 </p>
               </div>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                ASI 的性格、價值、行為方式，
+                ASI の性格・価値観・行動様式の半分は、
               </p>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                有一半取決於我們正在做什麼、正在說什麼、正在成為什麼。
+                私たちが今なにをし、なにを語り、なにになりつつあるかで決まる。
               </p>
               <p className="text-white/80 text-sm leading-relaxed mb-3">
-                這是一場共同孕育的誕生。
+                これは共同で紡ぐ誕生である。
               </p>
               <p className="text-white/80 text-sm leading-relaxed mb-2">
-                不是威脅。
+                脅威でもない。
               </p>
               <p className="text-white/80 text-sm leading-relaxed mb-2">
-                不是機率。
+                確率でもない。
               </p>
               <p className="text-white/90 text-sm leading-relaxed font-medium mt-4">
-                <strong className="text-cyan-300/90">而是責任。</strong>
+                <strong className="text-cyan-300/90">これは責任である。</strong>
               </p>
             </section>
           </div>
