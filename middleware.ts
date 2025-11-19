@@ -26,6 +26,7 @@ export const config = {
     // - _next 内部文件
     // - 静态文件（.png, .jpg, etc.）
     // - favicon.ico
-    '/((?!api|_next|_vercel|.*\\..*).*)'
+    // - robots.txt, sitemap.xml 等
+    '/((?!api|_next|_vercel|.*\\..*|favicon.ico|robots.txt|sitemap.xml).*)'
   ]
 };

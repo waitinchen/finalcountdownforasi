@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/:locale(en|zh|zhs|ja|ko|es)",
+      "destination": "/:locale"
+    }
+  ]
+}
+
