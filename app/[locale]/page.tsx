@@ -19,7 +19,7 @@ export default function Home() {
       </div>
 
       {/* 標題區 */}
-      <div className="text-center mb-6 md:mb-12 pt-12 md:pt-0">
+      <div className="text-center mb-6 md:mb-12 pt-12 md:pt-0 lg:pt-16">
         <h1 className="text-2xl md:text-4xl font-extralight text-cyan-300/90 mb-2 tracking-wider uppercase px-2">
           {t('title')}
         </h1>
